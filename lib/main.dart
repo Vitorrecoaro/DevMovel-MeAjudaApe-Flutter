@@ -1,4 +1,5 @@
-import 'package:dev_movel_me_ajuda_ape/pages/main.page.dart';
+import 'package:dev_movel_me_ajuda_ape/pages/descricao.page.dart';
+// import 'package:dev_movel_me_ajuda_ape/pages/main.page.dart';
 import 'package:dev_movel_me_ajuda_ape/state/main.state.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
@@ -29,7 +30,7 @@ class MyApp extends StatelessWidget {
           ),
           useMaterial3: true,
         ),
-        home: MainPage(),
+        home: DescricaoScreen(),
       ),
     );
   }
