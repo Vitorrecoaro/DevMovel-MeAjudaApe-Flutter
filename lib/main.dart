@@ -1,5 +1,5 @@
 import 'package:dev_movel_me_ajuda_ape/pages/descricao.page.dart';
-// import 'package:dev_movel_me_ajuda_ape/pages/main.page.dart';
+import 'package:dev_movel_me_ajuda_ape/pages/main.page.dart';
 import 'package:dev_movel_me_ajuda_ape/state/main.state.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
@@ -16,6 +16,11 @@ class MyApp extends StatelessWidget {
     return ChangeNotifierProvider(
       create: (BuildContext context) => AppState(),
       child: MaterialApp(
+        initialRoute: '/',
+        routes: {
+          '/': (context) => MainPage(),
+          '/description': (context) => DescricaoScreen()
+        },
         title: 'Flutter Demo',
         theme: ThemeData(
           colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
@@ -30,9 +35,7 @@ class MyApp extends StatelessWidget {
           ),
           useMaterial3: true,
         ),
-        home: DescricaoScreen(),
       ),
     );
   }
 }
-

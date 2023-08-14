@@ -24,202 +24,199 @@ class DescricaoScreen extends StatelessWidget {
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            SizedBox(
-              height: 230,
-              child: Carousel(imagePaths),
+            Carousel(imagePaths),
+            Container(
+              margin: const EdgeInsets.only(top: 8),
+              child: const Row(
+                mainAxisAlignment: MainAxisAlignment.spaceAround,
+                children: [
+                  Column(
+                    children: [
+                      Text(
+                        'Aluguel',
+                        style: TextStyle(
+                          fontSize: 18,
+                          fontWeight: FontWeight.bold,
+                        ),
+                      ),
+                      Text(
+                        'R\$700,00',
+                        style: TextStyle(
+                          fontSize: 18,
+                          fontWeight: FontWeight.bold,
+                        ),
+                      ),
+                    ],
+                  ),
+                  Column(
+                    children: [
+                      Text(
+                        'Condomínio',
+                        style: TextStyle(
+                          fontSize: 15,
+                          fontWeight: FontWeight.bold,
+                        ),
+                      ),
+                      Text(
+                        'R\$300,00',
+                        style: TextStyle(
+                          fontSize: 15,
+                          fontWeight: FontWeight.bold,
+                        ),
+                      ),
+                    ],
+                  ),
+                  Column(
+                    children: [
+                      Text(
+                        'IPTU',
+                        style: TextStyle(
+                          fontSize: 15,
+                          fontWeight: FontWeight.bold,
+                        ),
+                      ),
+                      Text(
+                        'R\$150,00',
+                        style: TextStyle(
+                          fontSize: 15,
+                          fontWeight: FontWeight.bold,
+                        ),
+                      ),
+                    ],
+                  ),
+                ],
+              ),
             ),
-          Container(
-            margin: const EdgeInsets.only(top: 8),
-            child: const Row(
-              mainAxisAlignment: MainAxisAlignment.spaceAround,
-              children: [
-                Column(
-                  children: [
-                    Text(
-                      'Aluguel',
-                      style: TextStyle(
-                        fontSize: 18,
-                        fontWeight: FontWeight.bold,
-                      ),
-                    ),
-                    Text(
-                      'R\$700,00',
-                      style: TextStyle(
-                        fontSize: 18,
-                        fontWeight: FontWeight.bold,
-                      ),
-                    ),
-                  ],
+            Row(
+              mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+              children: <Widget>[
+                Expanded(
+                  child: _buildColumnCard(
+                    icon: Icons.bed_outlined,
+                    title: '2',
+                    subtitle: 'Quartos',
+                  ),
                 ),
-                Column(
-                  children: [
-                    Text(
-                      'Condomínio',
-                      style: TextStyle(
-                        fontSize: 15,
-                        fontWeight: FontWeight.bold,
-                      ),
-                    ),
-                    Text(
-                      'R\$300,00',
-                      style: TextStyle(
-                        fontSize: 15,
-                        fontWeight: FontWeight.bold,
-                      ),
-                    ),
-                  ],
+                Expanded(
+                  child: _buildColumnCard(
+                    icon: Icons.bathtub_outlined,
+                    title: '0',
+                    subtitle: 'Suítes',
+                  ),
                 ),
-                Column(
-                  children: [
-                    Text(
-                      'IPTU',
-                      style: TextStyle(
-                        fontSize: 15,
-                        fontWeight: FontWeight.bold,
-                      ),
-                    ),
-                    Text(
-                      'R\$150,00',
-                      style: TextStyle(
-                        fontSize: 15,
-                        fontWeight: FontWeight.bold,
-                      ),
-                    ),
-                  ],
+                Expanded(
+                  child: _buildColumnCard(
+                    icon: Icons.shower_outlined,
+                    title: '2',
+                    subtitle: 'Banheiros',
+                  ),
+                ),
+                Expanded(
+                  child: _buildColumnCard(
+                    icon: Icons.square_foot_outlined,
+                    title: '60m²',
+                    subtitle: 'Área',
+                  ),
                 ),
               ],
             ),
-          ),
-          Row(
-            mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-            children: <Widget>[
-              Expanded(
-                child: _buildColumnCard(
-                  icon: Icons.bed_outlined,
-                  title: '2',
-                  subtitle: 'Quartos',
-                ),
-              ),
-              Expanded(
-                child: _buildColumnCard(
-                  icon: Icons.bathtub_outlined,
-                  title: '0',
-                  subtitle: 'Suítes',
-                ),
-              ),
-              Expanded(
-                child: _buildColumnCard(
-                  icon: Icons.shower_outlined,
-                  title: '2',
-                  subtitle: 'Banheiros',
-                ),
-              ),
-              Expanded(
-                child: _buildColumnCard(
-                  icon: Icons.square_foot_outlined,
-                  title: '60m²',
-                  subtitle: 'Área',
-                ),
-              ),
-            ],
-          ),
-          const Padding(
-            padding: EdgeInsets.only(top: 8),
-            child: Center(
-              child: Text(
-                'Endereço: Padre Teixeira, 1465, Centro, São Carlos',
-                style: TextStyle(
-                  fontSize: 12,
-                  fontWeight: FontWeight.bold,
-                ),
-              ),
-            ),
-          ),
-          const Padding(
-            padding: EdgeInsets.all(8),
-            child: Column(
-              crossAxisAlignment: CrossAxisAlignment.start,
-              children: [
-                Text(
-                  'Descrição',
+            const Padding(
+              padding: EdgeInsets.only(top: 8),
+              child: Center(
+                child: Text(
+                  'Endereço: Padre Teixeira, 1465, Centro, São Carlos',
                   style: TextStyle(
-                    fontSize: 15,
+                    fontSize: 12,
                     fontWeight: FontWeight.bold,
                   ),
                 ),
-                Text(
-                  'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed porta, turpis vel porta tincidunt, leo nibh bibendum libero, sed vulputate mauris mauris et mauris. Nullam lobortis, lectus sed convallis laoreet, quam lectus fermentum mi, a tristique arcu velit efficitur mauris.',
-                  style: TextStyle(
-                    fontSize: 13,
-                  ),
-                ),
-              ],
+              ),
             ),
-          ),
-          const Padding(
-            padding: EdgeInsets.all(8),
-            child: Column(
-              crossAxisAlignment: CrossAxisAlignment.start,
-              children: [
-                Text(
-                  'Características do imóvel',
-                  style: TextStyle(
-                    fontSize: 15,
-                    fontWeight: FontWeight.bold,
-                  ),
-                ),
-                Row(
-                  children: [
-                    FeatureText('Armário embutido'),
-                    FeatureText('Área de serviço'),
-                  ],
-                ),
-                Row(
-                  children: [
-                    FeatureText('Armário de cozinha'),
-                    FeatureText('Varanda'),
-                  ],
-                ),
-              ],
-            ),
-          ),
-          Padding(
-            padding: const EdgeInsets.all(8),
-            child: Column(
-              crossAxisAlignment: CrossAxisAlignment.start,
-              children: [
-                const Text(
-                  'Contato do anunciante',
-                  style: TextStyle(
-                    fontSize: 15,
-                    fontWeight: FontWeight.bold,
-                  ),
-                ),
-                const Row(
-                  children: [
-                    ContactText('Whatsapp: (12) 91234-5678'),
-                    ContactText('Código do imóvel: 12345'),
-                  ],
-                ),
-                Center(
-                  child: ElevatedButton(
-                    style: ElevatedButton.styleFrom(
-                      backgroundColor: const Color(0xFF353535),
+            const Padding(
+              padding: EdgeInsets.all(8),
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  Text(
+                    'Descrição',
+                    style: TextStyle(
+                      fontSize: 15,
+                      fontWeight: FontWeight.bold,
                     ),
-                    onPressed: () {},
-                    child: const Text('Contato',
-                      style: TextStyle(
-                        color: Color(0xFFF2BC1B)
+                  ),
+                  Text(
+                    'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed porta, turpis vel porta tincidunt, leo nibh bibendum libero, sed vulputate mauris mauris et mauris. Nullam lobortis, lectus sed convallis laoreet, quam lectus fermentum mi, a tristique arcu velit efficitur mauris.',
+                    style: TextStyle(
+                      fontSize: 13,
+                    ),
+                  ),
+                ],
+              ),
+            ),
+            const Padding(
+              padding: EdgeInsets.all(8),
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  Text(
+                    'Características do imóvel',
+                    style: TextStyle(
+                      fontSize: 15,
+                      fontWeight: FontWeight.bold,
+                    ),
+                  ),
+                  Row(
+                    children: [
+                      FeatureText('Armário embutido'),
+                      FeatureText('Área de serviço'),
+                    ],
+                  ),
+                  Row(
+                    children: [
+                      FeatureText('Armário de cozinha'),
+                      FeatureText('Varanda'),
+                    ],
+                  ),
+                ],
+              ),
+            ),
+            Padding(
+              padding: const EdgeInsets.all(8),
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  const Text(
+                    'Contato do anunciante',
+                    style: TextStyle(
+                      fontSize: 15,
+                      fontWeight: FontWeight.bold,
+                    ),
+                  ),
+                  const Row(
+                    children: [
+                      ContactText('Whatsapp: (12) 91234-5678'),
+                      ContactText('Código do imóvel: 12345'),
+                    ],
+                  ),
+                  Center(
+                    child: ElevatedButton(
+                      style: ElevatedButton.styleFrom(
+                        backgroundColor: const Color(0xFF353535),
                       ),
-                    
+                      onPressed: () {},
+                      child: const Text('Contato',
+                        style: TextStyle(
+                          color: Color(0xFFF2BC1B)
+                        ),
+                      
+                      ),
                     ),
                   ),
-                ),
-              ],
+                ],
+              ),
             ),
-          ),
-        ],
-      ),
+          ],
+        ),
       ),
     );
   }
