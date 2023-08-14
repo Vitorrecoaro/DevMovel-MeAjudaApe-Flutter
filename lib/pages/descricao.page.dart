@@ -203,8 +203,16 @@ class DescricaoScreen extends StatelessWidget {
                 ),
                 Center(
                   child: ElevatedButton(
+                    style: ElevatedButton.styleFrom(
+                      backgroundColor: const Color(0xFF353535),
+                    ),
                     onPressed: () {},
-                    child: const Text('Contato'),
+                    child: const Text('Contato',
+                      style: TextStyle(
+                        color: Color(0xFFF2BC1B)
+                      ),
+                    
+                    ),
                   ),
                 ),
               ],
@@ -222,6 +230,7 @@ class DescricaoScreen extends StatelessWidget {
     required String subtitle,
   }) {
     return Card(
+      color: const Color(0xFFF9F9F9),
       elevation: 8,
       shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(8)),
       margin: const EdgeInsets.all(8),
@@ -231,7 +240,8 @@ class DescricaoScreen extends StatelessWidget {
           children: [
             Icon(
               icon,
-              size: 24,
+              size: 30,
+              color: const Color(0xFFF2BC1B)
             ),
             const SizedBox(height: 4),
             Text(
@@ -258,7 +268,7 @@ class FeatureText extends StatelessWidget {
     return Expanded(
       child: Text(
         text,
-        style: const TextStyle(fontSize: 13),
+        style: const TextStyle(fontSize: 13,),
       ),
     );
   }
@@ -313,7 +323,7 @@ class CarouselIndicator extends State<Carousel> {
         }).toList(),
         carouselController: _controller,
         options: CarouselOptions(
-            autoPlay: true,
+            autoPlay: false,
             enlargeCenterPage: true,
             aspectRatio: 2.0,
             onPageChanged: (index, reason) {
