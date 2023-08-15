@@ -25,7 +25,14 @@ class MyApp extends StatelessWidget {
         theme: ThemeData(
           colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
           navigationBarTheme: NavigationBarThemeData(
-            iconTheme: MaterialStateProperty.all(const IconThemeData(size: 28)),
+            backgroundColor: const Color(0xFF353535),
+            indicatorColor: Colors.transparent,
+            iconTheme: MaterialStateProperty.all(
+              const IconThemeData(
+                size: 28,
+                color: Color(0xFFF2BC1B)
+              )
+            ),
             labelBehavior: NavigationDestinationLabelBehavior.onlyShowSelected,
             labelTextStyle: MaterialStateProperty.all(
               const TextStyle(
