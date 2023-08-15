@@ -1,5 +1,5 @@
+import 'package:dev_movel_me_ajuda_ape/components/imovelCard.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/widgets.dart';
 import 'package:provider/provider.dart';
 
 import '../state/main.state.dart';
@@ -14,12 +14,11 @@ class MainPage extends StatelessWidget {
       body: [
         Container(
           color: Colors.grey,
-          child: Center(
-            child: ElevatedButton(
-                onPressed: () {
-                  Navigator.pushNamed(context, '/description');
-                },
-                child: const Text('Clique aqui para abrir a descrição')),
+          child: const Center(
+            child: Padding(
+              padding: EdgeInsets.symmetric(horizontal: 16),
+              child: ImovelCard(),
+            ),
           ),
         ),
         Container(
