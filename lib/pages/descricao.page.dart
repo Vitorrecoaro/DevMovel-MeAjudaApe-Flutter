@@ -204,11 +204,9 @@ class DescricaoScreen extends StatelessWidget {
                         backgroundColor: const Color(0xFF353535),
                       ),
                       onPressed: () {},
-                      child: const Text('Contato',
-                        style: TextStyle(
-                          color: Color(0xFFF2BC1B)
-                        ),
-                      
+                      child: const Text(
+                        'Contato',
+                        style: TextStyle(color: Color(0xFFF2BC1B)),
                       ),
                     ),
                   ),
@@ -235,11 +233,7 @@ class DescricaoScreen extends StatelessWidget {
         padding: const EdgeInsets.all(8.0),
         child: Column(
           children: [
-            Icon(
-              icon,
-              size: 30,
-              color: const Color(0xFFF2BC1B)
-            ),
+            Icon(icon, size: 30, color: const Color(0xFFF2BC1B)),
             const SizedBox(height: 4),
             Text(
               title,
@@ -265,7 +259,9 @@ class FeatureText extends StatelessWidget {
     return Expanded(
       child: Text(
         text,
-        style: const TextStyle(fontSize: 13,),
+        style: const TextStyle(
+          fontSize: 13,
+        ),
       ),
     );
   }
@@ -337,7 +333,8 @@ class CarouselIndicator extends State<Carousel> {
             child: Container(
               width: 12.0,
               height: 12.0,
-              margin: const EdgeInsets.symmetric(vertical: 8.0, horizontal: 4.0),
+              margin:
+                  const EdgeInsets.symmetric(vertical: 8.0, horizontal: 4.0),
               decoration: BoxDecoration(
                   shape: BoxShape.circle,
                   color: (Theme.of(context).brightness == Brightness.dark
