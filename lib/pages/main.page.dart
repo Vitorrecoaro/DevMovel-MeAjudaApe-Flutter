@@ -23,7 +23,7 @@ class MainPage extends StatelessWidget {
         Container(
           color: Colors.green,
           child: const Center(
-            child: Text("Messages page"),
+            child: Text("Messages Page"),
           ),
         ),
         Container(
