@@ -24,8 +24,12 @@ class MainPage extends StatelessWidget {
         ),
         Container(
           color: Colors.yellow,
-          child: const Center(
-            child: Text("Form page"),
+          child: Center(
+            child: ElevatedButton(
+                onPressed: () {
+                  Navigator.pushNamed(context, '/add');
+                },
+                child: const Text('Clique aqui para abrir o forms')),
           ),
         ),
         Container(
