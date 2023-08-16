@@ -1,16 +1,16 @@
+import 'package:dev_movel_me_ajuda_ape/classes/imovel.dart';
 import 'package:flutter/material.dart';
 
 class ImovelCard extends StatelessWidget {
   final bool isFavorite;
+  final Imovel imovel;
   final Function(int) callbackFavButton;
   const ImovelCard(
-    {
-      super.key,
+      {super.key,
       required this.isFavorite,
-      required this.callbackFavButton
-    }
-  );
-  
+      required this.callbackFavButton,
+      required this.imovel});
+
   @override
   Widget build(BuildContext context) {
     return SizedBox(
@@ -30,12 +30,10 @@ class ImovelCard extends StatelessWidget {
                 children: [
                   Container(
                     height: 156,
-                    decoration: const BoxDecoration(
+                    decoration: BoxDecoration(
                       image: DecorationImage(
                         fit: BoxFit.cover,
-                        image: AssetImage(
-                          'assets/foto_ap.jpg',
-                        ),
+                        image: NetworkImage(imovel.imageLinks[0]),
                       ),
                     ),
                   ),
@@ -48,7 +46,7 @@ class ImovelCard extends StatelessWidget {
                         color: Color(0xFFF9F9F9),
                       ),
                       child: IconButton(
-                        onPressed: () => callbackFavButton(1),
+                        onPressed: () => callbackFavButton(imovel.id),
                         color: Colors.red.shade800,
                         icon: Icon(isFavorite
                             ? Icons.favorite
@@ -63,17 +61,16 @@ class ImovelCard extends StatelessWidget {
                 child: Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
-                    const Text(
-                      'Apartamento 45m², Vila Celina',
-                      style: TextStyle(
+                    Text(
+                      imovel.name,
+                      style: const TextStyle(
                         fontWeight: FontWeight.bold,
                         fontSize: 16,
                       ),
                     ),
                     Padding(
                       padding: const EdgeInsets.symmetric(vertical: 12.0),
-                      child: Text(
-                          'Apartamento de 45m², localizado na Vila Celina, ideal para estudantes da UFSCar.',
+                      child: Text(imovel.description,
                           maxLines: 2,
                           overflow: TextOverflow.ellipsis,
                           style: TextStyle(
@@ -81,27 +78,27 @@ class ImovelCard extends StatelessWidget {
                             color: Colors.black.withOpacity(0.6),
                           )),
                     ),
-                    const Row(
+                    Row(
                       mainAxisAlignment: MainAxisAlignment.end,
                       children: [
-                        Icon(Icons.home_outlined),
+                        const Icon(Icons.home_outlined),
                         Padding(
-                          padding: EdgeInsets.symmetric(horizontal: 6.0),
+                          padding: const EdgeInsets.symmetric(horizontal: 6.0),
                           child: Text(
-                            'R\$ 450',
-                            style: TextStyle(
+                            'R\$ ${imovel.rent.toStringAsFixed(2)}',
+                            style: const TextStyle(
                               fontSize: 16,
                               fontWeight: FontWeight.bold,
                               color: Color(0xFF353535),
                             ),
                           ),
                         ),
-                        Icon(Icons.home_work_outlined),
+                        const Icon(Icons.home_work_outlined),
                         Padding(
-                          padding: EdgeInsets.symmetric(horizontal: 6.0),
+                          padding: const EdgeInsets.symmetric(horizontal: 6.0),
                           child: Text(
-                            'R\$ 450',
-                            style: TextStyle(
+                            'R\$ ${imovel.condominium.toStringAsFixed(2)}',
+                            style: const TextStyle(
                               fontSize: 16,
                               fontWeight: FontWeight.bold,
                               color: Color(0xFF353535),

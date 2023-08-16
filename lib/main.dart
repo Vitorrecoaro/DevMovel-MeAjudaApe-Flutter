@@ -28,11 +28,7 @@ class MyApp extends StatelessWidget {
             backgroundColor: const Color(0xFF353535),
             indicatorColor: Colors.transparent,
             iconTheme: MaterialStateProperty.all(
-              const IconThemeData(
-                size: 28,
-                color: Color(0xFFF2BC1B)
-              )
-            ),
+                const IconThemeData(size: 28, color: Color(0xFFF2BC1B))),
             labelBehavior: NavigationDestinationLabelBehavior.onlyShowSelected,
             labelTextStyle: MaterialStateProperty.all(
               const TextStyle(

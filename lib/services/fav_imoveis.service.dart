@@ -2,9 +2,11 @@ import 'package:shared_preferences/shared_preferences.dart';
 
 class FavImoveisService {
   final List<int> _favBuildings = [];
+  bool _isStarted = false;
 
   Future<void> loadData() async {
-    if (_favBuildings.isEmpty) {
+    if (!_isStarted) {
+      _isStarted = true;
       await _loadFavBuildings();
     }
   }
