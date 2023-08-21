@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 
 class NovoImovelForms2 extends StatefulWidget {
   const NovoImovelForms2({super.key});
@@ -8,6 +9,10 @@ class NovoImovelForms2 extends StatefulWidget {
 }
 
 class _NovoImovelForms2State extends State<NovoImovelForms2> {
+  bool _casaSelected = false;
+  bool _apSelected = false;
+  bool _repSelected = false;
+
   TextEditingController _tfM2Controller = TextEditingController();
   TextEditingController _tfValController = TextEditingController();
   TextEditingController _tfCondController = TextEditingController();
@@ -39,93 +44,143 @@ class _NovoImovelForms2State extends State<NovoImovelForms2> {
       appBar: AppBar(
         title: const Text('Insira as informações do imóvel'),
       ),
-      body: Padding(
-        padding: const EdgeInsets.all(16.0),
-        child: Column(children: [
-          Padding(
-            padding: const EdgeInsets.symmetric(vertical: 20),
-            child: Row(
-              mainAxisAlignment: MainAxisAlignment.spaceBetween,
-              children: [
-                DropdownMenu<QuartosLabel>(
-                  initialSelection: QuartosLabel.um,
-                  controller: quartosController,
-                  label: const Text('Número de Quartos'),
-                  dropdownMenuEntries: nQuartos,
-                  onSelected: (QuartosLabel? quartos) {
-                    setState(() {
-                      NquartosSelected = quartos;
-                    });
-                  },
-                  width: 165,
-                ),
-                const SizedBox(width: 20),
-                DropdownMenu<BanheirosLabel>(
-                  initialSelection: BanheirosLabel.um,
-                  controller: banheirosController,
-                  label: const Text('Número de Banheiros'),
-                  dropdownMenuEntries: nBanheiros,
-                  onSelected: (BanheirosLabel? banheiros) {
-                    setState(() {
-                      NbanheirosSelected = banheiros;
-                    });
-                  },
-                  width: 165,
-                ),
-              ],
+      body: SingleChildScrollView(
+        child: Column(
+          children: [
+            CheckboxListTile(
+              title: Text('Casa'),
+              value: _casaSelected,
+              onChanged: (bool? value) {
+                setState(() {
+                  _casaSelected = value!;
+                });
+              },
+              controlAffinity: ListTileControlAffinity.leading,
+              tristate: true,
             ),
-          ),
-          TextField(
-            controller: _tfM2Controller,
-            decoration: const InputDecoration(
-              labelText: 'Tamanho Acomodação(m²)',
-              border: OutlineInputBorder(),
+            CheckboxListTile(
+              title: Text('Apartamento'),
+              value: _apSelected,
+              onChanged: (bool? value) {
+                setState(() {
+                  _apSelected = value!;
+                });
+              },
+              controlAffinity: ListTileControlAffinity.leading,
+              tristate: true,
             ),
-          ),
-          const SizedBox(height: 20),
-          TextField(
-            controller: _tfValController,
-            decoration: const InputDecoration(
-              labelText: 'Valor Aluguel',
-              border: OutlineInputBorder(),
+            CheckboxListTile(
+              title: Text('Quarto em República'),
+              value: _repSelected,
+              onChanged: (bool? value) {
+                setState(() {
+                  _repSelected = value!;
+                });
+              },
+              controlAffinity: ListTileControlAffinity.leading,
+              tristate: true,
             ),
-          ),
-          const SizedBox(height: 20),
-          TextField(
-            controller: _tfCondController,
-            decoration: const InputDecoration(
-              labelText: 'Valor Condomínio',
-              border: OutlineInputBorder(),
+            Padding(
+              padding: const EdgeInsets.all(16.0),
+              child: Column(
+                children: [
+                  Padding(
+                    padding: const EdgeInsets.symmetric(vertical: 20),
+                    child: Row(
+                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                      children: [
+                        DropdownMenu<QuartosLabel>(
+                          initialSelection: QuartosLabel.um,
+                          controller: quartosController,
+                          label: const Text('Número de Quartos'),
+                          dropdownMenuEntries: nQuartos,
+                          onSelected: (QuartosLabel? quartos) {
+                            setState(() {
+                              NquartosSelected = quartos;
+                            });
+                          },
+                          width: 165,
+                        ),
+                        const SizedBox(width: 20),
+                        DropdownMenu<BanheirosLabel>(
+                          initialSelection: BanheirosLabel.um,
+                          controller: banheirosController,
+                          label: const Text('Número de Banheiros'),
+                          dropdownMenuEntries: nBanheiros,
+                          onSelected: (BanheirosLabel? banheiros) {
+                            setState(() {
+                              NbanheirosSelected = banheiros;
+                            });
+                          },
+                          width: 165,
+                        ),
+                      ],
+                    ),
+                  ),
+                  TextField(
+                    controller: _tfM2Controller,
+                    decoration: const InputDecoration(
+                      labelText: 'Tamanho Acomodação(m²)',
+                      border: OutlineInputBorder(),
+                    ),
+                    keyboardType: TextInputType.number,
+                  ),
+                  const SizedBox(height: 20),
+                  TextField(
+                    controller: _tfValController,
+                    decoration: const InputDecoration(
+                      labelText: 'Valor Aluguel',
+                      border: OutlineInputBorder(),
+                    ),
+                    keyboardType: TextInputType.number,
+                  ),
+                  const SizedBox(height: 20),
+                  TextField(
+                      controller: _tfCondController,
+                      decoration: const InputDecoration(
+                        labelText: 'Valor Condomínio',
+                        border: OutlineInputBorder(),
+                      ),
+                      keyboardType: TextInputType.number),
+                  const SizedBox(height: 20),
+                  TextField(
+                    controller: _tfIptuController,
+                    decoration: const InputDecoration(
+                      labelText: 'Valor IPTU',
+                      border: OutlineInputBorder(),
+                    ),
+                    keyboardType: TextInputType.number,
+                  ),
+                  const SizedBox(height: 20),
+                  TextField(
+                    controller: _tfDescController,
+                    maxLines: 2,
+                    decoration: const InputDecoration(
+                      labelText: 'Descrição',
+                      border: OutlineInputBorder(),
+                    ),
+                    keyboardType: TextInputType.multiline,
+                    maxLength: 100,
+                    maxLengthEnforcement: MaxLengthEnforcement.enforced,
+                  ),
+                  const SizedBox(height: 40),
+                  ElevatedButton(
+                    onPressed: () {
+                      Navigator.pushNamed(context, '/');
+                    },
+                    style: ElevatedButton.styleFrom(
+                        padding: const EdgeInsets.symmetric(
+                            vertical: 10, horizontal: 40)),
+                    child: const Text(
+                      'CONTINUAR',
+                      style: TextStyle(fontSize: 15),
+                    ),
+                  ),
+                ],
+              ),
             ),
-          ),
-          const SizedBox(height: 20),
-          TextField(
-            controller: _tfIptuController,
-            decoration: const InputDecoration(
-              labelText: 'Valor IPTU',
-              border: OutlineInputBorder(),
-            ),
-          ),
-          const SizedBox(height: 20),
-          TextField(
-            controller: _tfDescController,
-            decoration: const InputDecoration(
-              labelText: 'Descrição',
-              border: OutlineInputBorder(),
-            ),
-          ),
-          const SizedBox(height: 40),
-          ElevatedButton(
-            onPressed: () {},
-            style: ElevatedButton.styleFrom(
-                padding:
-                    const EdgeInsets.symmetric(vertical: 10, horizontal: 40)),
-            child: const Text(
-              'CONTINUAR',
-              style: TextStyle(fontSize: 15),
-            ),
-          ),
-        ]),
+          ],
+        ),
       ),
     );
   }

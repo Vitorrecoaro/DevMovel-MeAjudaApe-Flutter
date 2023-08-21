@@ -27,7 +27,7 @@ class MainPage extends StatelessWidget {
           child: Center(
             child: ElevatedButton(
                 onPressed: () {
-                  Navigator.pushNamed(context, '/add');
+                  Navigator.pushNamed(context, '/forms');
                 },
                 child: const Text('Clique aqui para abrir o forms')),
           ),

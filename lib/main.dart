@@ -22,7 +22,8 @@ class MyApp extends StatelessWidget {
         routes: {
           '/': (context) => MainPage(),
           '/description': (context) => DescricaoScreen(),
-          '/add': (context) => NovoImovelForms2()
+          '/forms': (context) => NovoImovelForms(),
+          '/forms2': (context) => NovoImovelForms2(),
         },
         title: 'Flutter Demo',
         theme: ThemeData(
