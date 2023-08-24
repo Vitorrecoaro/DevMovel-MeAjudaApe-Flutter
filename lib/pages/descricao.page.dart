@@ -2,7 +2,9 @@ import 'package:flutter/material.dart';
 import 'package:carousel_slider/carousel_slider.dart';
 import 'package:dev_movel_me_ajuda_ape/classes/imovel.dart';
 
+class DescricaoScreen extends StatelessWidget {
   late Imovel imovel;
+  DescricaoScreen({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -18,21 +20,21 @@ import 'package:dev_movel_me_ajuda_ape/classes/imovel.dart';
             Carousel(imovel.imageLinks),
             Container(
               margin: const EdgeInsets.only(top: 8),
-              child:  Row(
+              child: Row(
                 mainAxisAlignment: MainAxisAlignment.spaceAround,
                 children: [
                   Column(
                     children: [
                       Text(
                         imovel.name,
-                        style: TextStyle(
+                        style: const TextStyle(
                           fontSize: 18,
                           fontWeight: FontWeight.bold,
                         ),
                       ),
                       Text(
                         '${imovel.rent}',
-                        style: TextStyle(
+                        style: const TextStyle(
                           fontSize: 18,
                           fontWeight: FontWeight.bold,
                         ),
@@ -41,7 +43,7 @@ import 'package:dev_movel_me_ajuda_ape/classes/imovel.dart';
                   ),
                   Column(
                     children: [
-                      Text(
+                      const Text(
                         'Condomínio',
                         style: TextStyle(
                           fontSize: 15,
@@ -50,7 +52,7 @@ import 'package:dev_movel_me_ajuda_ape/classes/imovel.dart';
                       ),
                       Text(
                         '${imovel.condominium}',
-                        style: TextStyle(
+                        style: const TextStyle(
                           fontSize: 15,
                           fontWeight: FontWeight.bold,
                         ),
@@ -59,7 +61,7 @@ import 'package:dev_movel_me_ajuda_ape/classes/imovel.dart';
                   ),
                   Column(
                     children: [
-                      Text(
+                      const Text(
                         'IPTU',
                         style: TextStyle(
                           fontSize: 15,
@@ -68,7 +70,7 @@ import 'package:dev_movel_me_ajuda_ape/classes/imovel.dart';
                       ),
                       Text(
                         '${imovel.taxes}',
-                        style: TextStyle(
+                        style: const TextStyle(
                           fontSize: 15,
                           fontWeight: FontWeight.bold,
                         ),
@@ -112,11 +114,11 @@ import 'package:dev_movel_me_ajuda_ape/classes/imovel.dart';
               ],
             ),
             Padding(
-              padding: EdgeInsets.only(top: 8),
+              padding: const EdgeInsets.only(top: 8),
               child: Center(
                 child: Text(
                   imovel.address,
-                  style: TextStyle(
+                  style: const TextStyle(
                     fontSize: 12,
                     fontWeight: FontWeight.bold,
                   ),
@@ -124,11 +126,11 @@ import 'package:dev_movel_me_ajuda_ape/classes/imovel.dart';
               ),
             ),
             Padding(
-              padding: EdgeInsets.all(8),
+              padding: const EdgeInsets.all(8),
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
-                  Text(
+                  const Text(
                     'Descrição',
                     style: TextStyle(
                       fontSize: 15,
@@ -137,14 +139,14 @@ import 'package:dev_movel_me_ajuda_ape/classes/imovel.dart';
                   ),
                   Text(
                     imovel.description,
-                    style: TextStyle(
+                    style: const TextStyle(
                       fontSize: 13,
                     ),
                   ),
                 ],
               ),
             ),
-            Padding(
+            const Padding(
               padding: EdgeInsets.all(8),
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
@@ -238,7 +240,7 @@ import 'package:dev_movel_me_ajuda_ape/classes/imovel.dart';
       ),
     );
   }
-
+}
 
 class FeatureText extends StatelessWidget {
   final String text;
