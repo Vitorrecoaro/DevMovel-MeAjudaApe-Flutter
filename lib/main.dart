@@ -1,10 +1,12 @@
 import 'package:dev_movel_me_ajuda_ape/pages/descricao.page.dart';
-import 'package:dev_movel_me_ajuda_ape/pages/forms2.imovel.dart';
-import 'package:dev_movel_me_ajuda_ape/pages/main.page.dart';
-import 'package:dev_movel_me_ajuda_ape/pages/forms.novo.imovel.dart';
+import 'package:dev_movel_me_ajuda_ape/pages/novo.imovel.form2.page.dart';
+import 'package:dev_movel_me_ajuda_ape/pages/principal.page.dart';
+import 'package:dev_movel_me_ajuda_ape/pages/novo.imovel.form1.page.dart';
 import 'package:dev_movel_me_ajuda_ape/state/main.state.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_localizations/flutter_localizations.dart';
 import 'package:provider/provider.dart';
+import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 
 void main() {
   runApp(const MyApp());
@@ -18,6 +20,15 @@ class MyApp extends StatelessWidget {
     return ChangeNotifierProvider(
       create: (BuildContext context) => AppState(),
       child: MaterialApp(
+        localizationsDelegates: const [
+          AppLocalizations.delegate,
+          GlobalMaterialLocalizations.delegate,
+          GlobalWidgetsLocalizations.delegate,
+        ],
+        supportedLocales: const [
+          Locale('en'),
+          Locale('pt_BR'),
+        ],
         initialRoute: '/',
         routes: {
           '/': (context) => MainPage(),
