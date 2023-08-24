@@ -2,5 +2,6 @@
     "home": "Announces",
     "newAnnounce": "New Announce",
     "messages": "Messages",
-    "profile": "Profile"
+    "profile": "Profile",
+    "owner": "Owner"
 }
