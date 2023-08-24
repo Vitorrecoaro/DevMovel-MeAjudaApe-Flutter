@@ -8,11 +8,11 @@ class NovoImovelForms extends StatefulWidget {
 }
 
 class _NovoImovelFormsState extends State<NovoImovelForms> {
-  TextEditingController _tfCEPController = TextEditingController();
-  TextEditingController _tfLagController = TextEditingController();
-  TextEditingController _tfBairController = TextEditingController();
-  TextEditingController _tfNumController = TextEditingController();
-  TextEditingController _tfComController = TextEditingController();
+  final TextEditingController _tfCEPController = TextEditingController();
+  final TextEditingController _tfLagController = TextEditingController();
+  final TextEditingController _tfBairController = TextEditingController();
+  final TextEditingController _tfNumController = TextEditingController();
+  final TextEditingController _tfComController = TextEditingController();
 
   @override
   Widget build(BuildContext context) {

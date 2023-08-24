@@ -1,6 +1,8 @@
 import 'package:dev_movel_me_ajuda_ape/classes/imovel.dart';
 import 'package:flutter/material.dart';
 
+import '../classes/custom_color_theme.dart';
+
 class ImovelCard extends StatelessWidget {
   final bool isFavorite;
   final Imovel imovel;
@@ -19,7 +21,7 @@ class ImovelCard extends StatelessWidget {
         color: Colors.white,
         clipBehavior: Clip.hardEdge,
         child: InkWell(
-          splashColor: const Color(0xFFF2BC1B).withAlpha(30),
+          splashColor: CustomColorTheme.primaryColor.withAlpha(30),
           onTap: () {
             Navigator.pushNamed(context, '/description');
           },
@@ -41,9 +43,9 @@ class ImovelCard extends StatelessWidget {
                     top: 8,
                     right: 8,
                     child: Container(
-                      decoration: const BoxDecoration(
+                      decoration: BoxDecoration(
                         shape: BoxShape.circle,
-                        color: Color(0xFFF9F9F9),
+                        color: CustomColorTheme.onSurfaceColor,
                       ),
                       child: IconButton(
                         onPressed: () => callbackFavButton(imovel.id),
@@ -86,10 +88,10 @@ class ImovelCard extends StatelessWidget {
                           padding: const EdgeInsets.symmetric(horizontal: 6.0),
                           child: Text(
                             'R\$ ${imovel.rent.toStringAsFixed(2)}',
-                            style: const TextStyle(
+                            style: TextStyle(
                               fontSize: 16,
                               fontWeight: FontWeight.bold,
-                              color: Color(0xFF353535),
+                              color: CustomColorTheme.tertiaryColor,
                             ),
                           ),
                         ),
@@ -98,10 +100,10 @@ class ImovelCard extends StatelessWidget {
                           padding: const EdgeInsets.symmetric(horizontal: 6.0),
                           child: Text(
                             'R\$ ${imovel.condominium.toStringAsFixed(2)}',
-                            style: const TextStyle(
+                            style: TextStyle(
                               fontSize: 16,
                               fontWeight: FontWeight.bold,
-                              color: Color(0xFF353535),
+                              color: CustomColorTheme.tertiaryColor,
                             ),
                           ),
                         ),

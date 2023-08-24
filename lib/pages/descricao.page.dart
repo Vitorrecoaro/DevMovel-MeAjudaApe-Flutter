@@ -1,3 +1,4 @@
+import 'package:dev_movel_me_ajuda_ape/classes/custom_color_theme.dart';
 import 'package:flutter/material.dart';
 import 'package:carousel_slider/carousel_slider.dart';
 
@@ -201,12 +202,14 @@ class DescricaoScreen extends StatelessWidget {
                   Center(
                     child: ElevatedButton(
                       style: ElevatedButton.styleFrom(
-                        backgroundColor: const Color(0xFF353535),
+                        backgroundColor: CustomColorTheme.tertiaryColor,
                       ),
                       onPressed: () {},
-                      child: const Text(
+                      child: Text(
                         'Contato',
-                        style: TextStyle(color: Color(0xFFF2BC1B)),
+                        style: TextStyle(
+                          color: CustomColorTheme.primaryColor,
+                        ),
                       ),
                     ),
                   ),
@@ -225,7 +228,7 @@ class DescricaoScreen extends StatelessWidget {
     required String subtitle,
   }) {
     return Card(
-      color: const Color(0xFFF9F9F9),
+      color: CustomColorTheme.onSurfaceColor,
       elevation: 8,
       shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(8)),
       margin: const EdgeInsets.all(8),
@@ -233,7 +236,11 @@ class DescricaoScreen extends StatelessWidget {
         padding: const EdgeInsets.all(8.0),
         child: Column(
           children: [
-            Icon(icon, size: 30, color: const Color(0xFFF2BC1B)),
+            Icon(
+              icon,
+              size: 30,
+              color: CustomColorTheme.primaryColor,
+            ),
             const SizedBox(height: 4),
             Text(
               title,

@@ -13,11 +13,11 @@ class _NovoImovelForms2State extends State<NovoImovelForms2> {
   bool _apSelected = false;
   bool _repSelected = false;
 
-  TextEditingController _tfM2Controller = TextEditingController();
-  TextEditingController _tfValController = TextEditingController();
-  TextEditingController _tfCondController = TextEditingController();
-  TextEditingController _tfIptuController = TextEditingController();
-  TextEditingController _tfDescController = TextEditingController();
+  final TextEditingController _tfM2Controller = TextEditingController();
+  final TextEditingController _tfValController = TextEditingController();
+  final TextEditingController _tfCondController = TextEditingController();
+  final TextEditingController _tfIptuController = TextEditingController();
+  final TextEditingController _tfDescController = TextEditingController();
 
   final TextEditingController quartosController = TextEditingController();
   final TextEditingController banheirosController = TextEditingController();
