@@ -1,21 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:carousel_slider/carousel_slider.dart';
+import 'package:dev_movel_me_ajuda_ape/classes/imovel.dart';
 
-void main() {
-  runApp(MaterialApp(
-    home: DescricaoScreen(),
-  ));
-}
-
-class DescricaoScreen extends StatelessWidget {
-  final List<String> imagePaths = [
-    'assets/foto_ap.jpg',
-    'assets/foto_ap.jpg',
-    'assets/foto_ap.jpg',
-  ];
+  late Imovel imovel;
 
   @override
   Widget build(BuildContext context) {
+    imovel = ModalRoute.of(context)?.settings.arguments as Imovel;
     return Scaffold(
       appBar: AppBar(
         title: const Text('Descrição'),
@@ -24,23 +15,23 @@ class DescricaoScreen extends StatelessWidget {
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            Carousel(imagePaths),
+            Carousel(imovel.imageLinks),
             Container(
               margin: const EdgeInsets.only(top: 8),
-              child: const Row(
+              child:  Row(
                 mainAxisAlignment: MainAxisAlignment.spaceAround,
                 children: [
                   Column(
                     children: [
                       Text(
-                        'Aluguel',
+                        imovel.name,
                         style: TextStyle(
                           fontSize: 18,
                           fontWeight: FontWeight.bold,
                         ),
                       ),
                       Text(
-                        'R\$700,00',
+                        '${imovel.rent}',
                         style: TextStyle(
                           fontSize: 18,
                           fontWeight: FontWeight.bold,
@@ -58,7 +49,7 @@ class DescricaoScreen extends StatelessWidget {
                         ),
                       ),
                       Text(
-                        'R\$300,00',
+                        '${imovel.condominium}',
                         style: TextStyle(
                           fontSize: 15,
                           fontWeight: FontWeight.bold,
@@ -76,7 +67,7 @@ class DescricaoScreen extends StatelessWidget {
                         ),
                       ),
                       Text(
-                        'R\$150,00',
+                        '${imovel.taxes}',
                         style: TextStyle(
                           fontSize: 15,
                           fontWeight: FontWeight.bold,
@@ -93,38 +84,38 @@ class DescricaoScreen extends StatelessWidget {
                 Expanded(
                   child: _buildColumnCard(
                     icon: Icons.bed_outlined,
-                    title: '2',
+                    title: '${imovel.bedrooms}',
                     subtitle: 'Quartos',
                   ),
                 ),
-                Expanded(
-                  child: _buildColumnCard(
-                    icon: Icons.bathtub_outlined,
-                    title: '0',
-                    subtitle: 'Suítes',
-                  ),
-                ),
+                // Expanded(
+                //   child: _buildColumnCard(
+                //     icon: Icons.bathtub_outlined,
+                //     title: '${imovel.}',
+                //     subtitle: 'Suítes',
+                //   ),
+                // ),
                 Expanded(
                   child: _buildColumnCard(
                     icon: Icons.shower_outlined,
-                    title: '2',
+                    title: '${imovel.bathrooms}',
                     subtitle: 'Banheiros',
                   ),
                 ),
                 Expanded(
                   child: _buildColumnCard(
                     icon: Icons.square_foot_outlined,
-                    title: '60m²',
+                    title: '${imovel.size}',
                     subtitle: 'Área',
                   ),
                 ),
               ],
             ),
-            const Padding(
+            Padding(
               padding: EdgeInsets.only(top: 8),
               child: Center(
                 child: Text(
-                  'Endereço: Padre Teixeira, 1465, Centro, São Carlos',
+                  imovel.address,
                   style: TextStyle(
                     fontSize: 12,
                     fontWeight: FontWeight.bold,
@@ -132,7 +123,7 @@ class DescricaoScreen extends StatelessWidget {
                 ),
               ),
             ),
-            const Padding(
+            Padding(
               padding: EdgeInsets.all(8),
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
@@ -145,7 +136,7 @@ class DescricaoScreen extends StatelessWidget {
                     ),
                   ),
                   Text(
-                    'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed porta, turpis vel porta tincidunt, leo nibh bibendum libero, sed vulputate mauris mauris et mauris. Nullam lobortis, lectus sed convallis laoreet, quam lectus fermentum mi, a tristique arcu velit efficitur mauris.',
+                    imovel.description,
                     style: TextStyle(
                       fontSize: 13,
                     ),
@@ -153,7 +144,7 @@ class DescricaoScreen extends StatelessWidget {
                 ],
               ),
             ),
-            const Padding(
+            Padding(
               padding: EdgeInsets.all(8),
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
@@ -247,7 +238,7 @@ class DescricaoScreen extends StatelessWidget {
       ),
     );
   }
-}
+
 
 class FeatureText extends StatelessWidget {
   final String text;

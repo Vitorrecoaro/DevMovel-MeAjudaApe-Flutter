@@ -13,11 +13,11 @@ class _NovoImovelForms2State extends State<NovoImovelForms2> {
   bool _apSelected = false;
   bool _repSelected = false;
 
-  TextEditingController _tfM2Controller = TextEditingController();
-  TextEditingController _tfValController = TextEditingController();
-  TextEditingController _tfCondController = TextEditingController();
-  TextEditingController _tfIptuController = TextEditingController();
-  TextEditingController _tfDescController = TextEditingController();
+  final TextEditingController _tfM2Controller = TextEditingController();
+  final TextEditingController _tfValController = TextEditingController();
+  final TextEditingController _tfCondController = TextEditingController();
+  final TextEditingController _tfIptuController = TextEditingController();
+  final TextEditingController _tfDescController = TextEditingController();
 
   final TextEditingController quartosController = TextEditingController();
   final TextEditingController banheirosController = TextEditingController();
@@ -48,7 +48,7 @@ class _NovoImovelForms2State extends State<NovoImovelForms2> {
         child: Column(
           children: [
             CheckboxListTile(
-              title: Text('Casa'),
+              title: const Text('Casa'),
               value: _casaSelected,
               onChanged: (bool? value) {
                 setState(() {
@@ -59,7 +59,7 @@ class _NovoImovelForms2State extends State<NovoImovelForms2> {
               tristate: true,
             ),
             CheckboxListTile(
-              title: Text('Apartamento'),
+              title: const Text('Apartamento'),
               value: _apSelected,
               onChanged: (bool? value) {
                 setState(() {
@@ -70,7 +70,7 @@ class _NovoImovelForms2State extends State<NovoImovelForms2> {
               tristate: true,
             ),
             CheckboxListTile(
-              title: Text('Quarto em República'),
+              title: const Text('Quarto em República'),
               value: _repSelected,
               onChanged: (bool? value) {
                 setState(() {
