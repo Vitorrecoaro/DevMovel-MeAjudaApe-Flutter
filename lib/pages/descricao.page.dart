@@ -1,22 +1,15 @@
-import 'package:dev_movel_me_ajuda_ape/classes/custom_color_theme.dart';
 import 'package:flutter/material.dart';
 import 'package:carousel_slider/carousel_slider.dart';
+import 'package:dev_movel_me_ajuda_ape/classes/imovel.dart';
 
-void main() {
-  runApp(MaterialApp(
-    home: DescricaoScreen(),
-  ));
-}
-
+// ignore: must_be_immutable
 class DescricaoScreen extends StatelessWidget {
-  final List<String> imagePaths = [
-    'assets/foto_ap.jpg',
-    'assets/foto_ap.jpg',
-    'assets/foto_ap.jpg',
-  ];
+  late Imovel imovel;
+  DescricaoScreen({super.key});
 
   @override
   Widget build(BuildContext context) {
+    imovel = ModalRoute.of(context)?.settings.arguments as Imovel;
     return Scaffold(
       appBar: AppBar(
         title: const Text('Descrição'),
@@ -25,24 +18,24 @@ class DescricaoScreen extends StatelessWidget {
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            Carousel(imagePaths),
+            Carousel(imovel.imageLinks),
             Container(
               margin: const EdgeInsets.only(top: 8),
-              child: const Row(
+              child: Row(
                 mainAxisAlignment: MainAxisAlignment.spaceAround,
                 children: [
                   Column(
                     children: [
                       Text(
-                        'Aluguel',
-                        style: TextStyle(
+                        imovel.name,
+                        style: const TextStyle(
                           fontSize: 18,
                           fontWeight: FontWeight.bold,
                         ),
                       ),
                       Text(
-                        'R\$700,00',
-                        style: TextStyle(
+                        '${imovel.rent}',
+                        style: const TextStyle(
                           fontSize: 18,
                           fontWeight: FontWeight.bold,
                         ),
@@ -51,7 +44,7 @@ class DescricaoScreen extends StatelessWidget {
                   ),
                   Column(
                     children: [
-                      Text(
+                      const Text(
                         'Condomínio',
                         style: TextStyle(
                           fontSize: 15,
@@ -59,8 +52,8 @@ class DescricaoScreen extends StatelessWidget {
                         ),
                       ),
                       Text(
-                        'R\$300,00',
-                        style: TextStyle(
+                        '${imovel.condominium}',
+                        style: const TextStyle(
                           fontSize: 15,
                           fontWeight: FontWeight.bold,
                         ),
@@ -69,7 +62,7 @@ class DescricaoScreen extends StatelessWidget {
                   ),
                   Column(
                     children: [
-                      Text(
+                      const Text(
                         'IPTU',
                         style: TextStyle(
                           fontSize: 15,
@@ -77,8 +70,8 @@ class DescricaoScreen extends StatelessWidget {
                         ),
                       ),
                       Text(
-                        'R\$150,00',
-                        style: TextStyle(
+                        '${imovel.taxes}',
+                        style: const TextStyle(
                           fontSize: 15,
                           fontWeight: FontWeight.bold,
                         ),
@@ -94,51 +87,44 @@ class DescricaoScreen extends StatelessWidget {
                 Expanded(
                   child: _buildColumnCard(
                     icon: Icons.bed_outlined,
-                    title: '2',
+                    title: '${imovel.bedrooms}',
                     subtitle: 'Quartos',
                   ),
                 ),
                 Expanded(
                   child: _buildColumnCard(
-                    icon: Icons.bathtub_outlined,
-                    title: '0',
-                    subtitle: 'Suítes',
-                  ),
-                ),
-                Expanded(
-                  child: _buildColumnCard(
                     icon: Icons.shower_outlined,
-                    title: '2',
+                    title: '${imovel.bathrooms}',
                     subtitle: 'Banheiros',
                   ),
                 ),
                 Expanded(
                   child: _buildColumnCard(
                     icon: Icons.square_foot_outlined,
-                    title: '60m²',
+                    title: '${imovel.size}',
                     subtitle: 'Área',
                   ),
                 ),
               ],
             ),
-            const Padding(
-              padding: EdgeInsets.only(top: 8),
+            Padding(
+              padding: const EdgeInsets.only(top: 8),
               child: Center(
                 child: Text(
-                  'Endereço: Padre Teixeira, 1465, Centro, São Carlos',
-                  style: TextStyle(
+                  imovel.address,
+                  style: const TextStyle(
                     fontSize: 12,
                     fontWeight: FontWeight.bold,
                   ),
                 ),
               ),
             ),
-            const Padding(
-              padding: EdgeInsets.all(8),
+            Padding(
+              padding: const EdgeInsets.all(8),
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
-                  Text(
+                  const Text(
                     'Descrição',
                     style: TextStyle(
                       fontSize: 15,
@@ -146,8 +132,8 @@ class DescricaoScreen extends StatelessWidget {
                     ),
                   ),
                   Text(
-                    'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed porta, turpis vel porta tincidunt, leo nibh bibendum libero, sed vulputate mauris mauris et mauris. Nullam lobortis, lectus sed convallis laoreet, quam lectus fermentum mi, a tristique arcu velit efficitur mauris.',
-                    style: TextStyle(
+                    imovel.description,
+                    style: const TextStyle(
                       fontSize: 13,
                     ),
                   ),
@@ -195,22 +181,23 @@ class DescricaoScreen extends StatelessWidget {
                   ),
                   const Row(
                     children: [
-                      ContactText('Whatsapp: (12) 91234-5678'),
-                      ContactText('Código do imóvel: 12345'),
+                      FeatureText('Whatsapp: (12) 91234-5678'),
+                      FeatureText('Código do imóvel: 12345'),
                     ],
                   ),
                   Center(
-                    child: ElevatedButton(
-                      style: ElevatedButton.styleFrom(
-                        backgroundColor: CustomColorTheme.tertiaryColor,
-                      ),
-                      onPressed: () {},
-                      child: Text(
-                        'Contato',
-                        style: TextStyle(
-                          color: CustomColorTheme.primaryColor,
-                        ),
-                      ),
+                    child: Container(
+                      margin: const EdgeInsets.only(top: 16),
+                      child: ElevatedButton(
+                          style: ElevatedButton.styleFrom(
+                            backgroundColor: const Color(0xFF353535),
+                            padding: const EdgeInsets.all(10),
+                          ),
+                          onPressed: () {},
+                          child: const Text(
+                            'Contato',
+                            style: TextStyle(color: Color(0xFFF2BC1B)),
+                          )),
                     ),
                   ),
                 ],
@@ -221,39 +208,35 @@ class DescricaoScreen extends StatelessWidget {
       ),
     );
   }
+}
 
-  Widget _buildColumnCard({
-    required IconData icon,
-    required String title,
-    required String subtitle,
-  }) {
-    return Card(
-      color: CustomColorTheme.onSurfaceColor,
-      elevation: 8,
-      shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(8)),
-      margin: const EdgeInsets.all(8),
-      child: Padding(
-        padding: const EdgeInsets.all(8.0),
-        child: Column(
-          children: [
-            Icon(
-              icon,
-              size: 30,
-              color: CustomColorTheme.primaryColor,
+Widget _buildColumnCard({
+  required IconData icon,
+  required String title,
+  required String subtitle,
+}) {
+  return Card(
+    color: const Color(0xFFF9F9F9),
+    elevation: 8,
+    shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(8)),
+    margin: const EdgeInsets.all(8),
+    child: Padding(
+      padding: const EdgeInsets.all(8.0),
+      child: Column(
+        children: [
+          Icon(icon, size: 30, color: const Color(0xFFF2BC1B)),
+          const SizedBox(height: 4),
+          Text(
+            title,
+            style: const TextStyle(
+              fontWeight: FontWeight.bold,
             ),
-            const SizedBox(height: 4),
-            Text(
-              title,
-              style: const TextStyle(
-                fontWeight: FontWeight.bold,
-              ),
-            ),
-            Text(subtitle),
-          ],
-        ),
+          ),
+          Text(subtitle),
+        ],
       ),
-    );
-  }
+    ),
+  );
 }
 
 class FeatureText extends StatelessWidget {
@@ -269,22 +252,6 @@ class FeatureText extends StatelessWidget {
         style: const TextStyle(
           fontSize: 13,
         ),
-      ),
-    );
-  }
-}
-
-class ContactText extends StatelessWidget {
-  final String text;
-
-  const ContactText(this.text, {Key? key}) : super(key: key);
-
-  @override
-  Widget build(BuildContext context) {
-    return Expanded(
-      child: Text(
-        text,
-        style: const TextStyle(fontSize: 13),
       ),
     );
   }
@@ -309,11 +276,11 @@ class CarouselIndicator extends State<Carousel> {
   Widget build(BuildContext context) {
     return Column(children: [
       CarouselSlider(
-        items: widget.imagePaths.map((imagePath) {
+        items: widget.imagePaths.map((imageLink) {
           return Builder(
             builder: (BuildContext context) {
-              return Image.asset(
-                imagePath,
+              return Image.network(
+                imageLink,
                 width: MediaQuery.of(context).size.width,
                 height: 230,
                 fit: BoxFit.cover,
