@@ -48,7 +48,7 @@ class _NovoImovelForms2State extends State<NovoImovelForms2> {
         child: Column(
           children: [
             CheckboxListTile(
-              title: Text('Casa'),
+              title: const Text('Casa'),
               value: _casaSelected,
               onChanged: (bool? value) {
                 setState(() {
@@ -59,7 +59,7 @@ class _NovoImovelForms2State extends State<NovoImovelForms2> {
               tristate: true,
             ),
             CheckboxListTile(
-              title: Text('Apartamento'),
+              title: const Text('Apartamento'),
               value: _apSelected,
               onChanged: (bool? value) {
                 setState(() {
@@ -70,7 +70,7 @@ class _NovoImovelForms2State extends State<NovoImovelForms2> {
               tristate: true,
             ),
             CheckboxListTile(
-              title: Text('Quarto em República'),
+              title: const Text('Quarto em República'),
               value: _repSelected,
               onChanged: (bool? value) {
                 setState(() {

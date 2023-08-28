@@ -23,7 +23,7 @@ class ImovelCard extends StatelessWidget {
         child: InkWell(
           splashColor: CustomColorTheme.primaryColor.withAlpha(30),
           onTap: () {
-            Navigator.pushNamed(context, '/description');
+            Navigator.pushNamed(context, '/description', arguments: imovel);
           },
           child: Column(
             mainAxisSize: MainAxisSize.min,
