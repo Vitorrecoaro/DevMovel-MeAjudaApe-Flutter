@@ -1,5 +1,6 @@
 import 'dart:ui';
 
+import 'package:dev_movel_me_ajuda_ape/classes/custom_color_theme.dart';
 import 'package:flutter/material.dart';
 
 class ImovelCardSkeleton extends StatefulWidget {
@@ -96,9 +97,9 @@ class _ImovelCardSkeletonState extends State<ImovelCardSkeleton>
                     right: 8,
                     child: Container(
                       padding: const EdgeInsets.all(12.0),
-                      decoration: const BoxDecoration(
+                      decoration: BoxDecoration(
                         shape: BoxShape.circle,
-                        color: Color(0xFFF9F9F9),
+                        color: CustomColorTheme.onSurfaceColor,
                       ),
                       child: Icon(
                         Icons.favorite_border,

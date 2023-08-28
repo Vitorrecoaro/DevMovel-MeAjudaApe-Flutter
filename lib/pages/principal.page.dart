@@ -1,6 +1,9 @@
+import 'package:dev_movel_me_ajuda_ape/pages/chat.page.dart';
+import 'package:dev_movel_me_ajuda_ape/pages/novo.imovel.form1.page.dart';
 import 'package:dev_movel_me_ajuda_ape/pages/imoveis.page.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
+import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 
 import '../state/main.state.dart';
 
@@ -10,26 +13,13 @@ class MainPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     AppState mainState = context.watch<AppState>();
+    AppLocalizations localization = AppLocalizations.of(context)!;
 
     return Scaffold(
       body: [
         const ImoveisPage(),
-        Container(
-          color: Colors.yellow,
-          child: Center(
-            child: ElevatedButton(
-                onPressed: () {
-                  Navigator.pushNamed(context, '/forms');
-                },
-                child: const Text('Clique aqui para abrir o forms')),
-          ),
-        ),
-        Container(
-          color: Colors.green,
-          child: const Center(
-            child: Text("Messages Page"),
-          ),
-        ),
+        const NovoImovelForms(),
+        const ChatPage(),
         Container(
           color: Colors.blue,
           child: const Center(
@@ -40,42 +30,42 @@ class MainPage extends StatelessWidget {
       bottomNavigationBar: NavigationBar(
         onDestinationSelected: (idx) => mainState.setIdx(idx),
         selectedIndex: mainState.idxNavBar,
-        destinations: const [
+        destinations: [
           NavigationDestination(
-            selectedIcon: Icon(
+            selectedIcon: const Icon(
               Icons.home,
             ),
-            icon: Icon(
+            icon: const Icon(
               Icons.home_outlined,
             ),
-            label: "Home",
+            label: localization.home,
           ),
           NavigationDestination(
-            selectedIcon: Icon(
+            selectedIcon: const Icon(
               Icons.add_circle,
             ),
-            icon: Icon(
+            icon: const Icon(
               Icons.add_circle_outline,
             ),
-            label: "Novo anúncio",
+            label: localization.newAnnounce,
           ),
           NavigationDestination(
-            selectedIcon: Icon(
+            selectedIcon: const Icon(
               Icons.message,
             ),
-            icon: Icon(
+            icon: const Icon(
               Icons.message_outlined,
             ),
-            label: "Mensagens",
+            label: localization.messages,
           ),
           NavigationDestination(
-            selectedIcon: Icon(
+            selectedIcon: const Icon(
               Icons.person,
             ),
-            icon: Icon(
+            icon: const Icon(
               Icons.person_outline,
             ),
-            label: "Perfil",
+            label: localization.profile,
           ),
         ],
       ),

@@ -1,3 +1,4 @@
+import 'package:dev_movel_me_ajuda_ape/classes/custom_color_theme.dart';
 import 'package:flutter/material.dart';
 import 'package:carousel_slider/carousel_slider.dart';
 import 'package:dev_movel_me_ajuda_ape/classes/imovel.dart';
@@ -186,18 +187,17 @@ class DescricaoScreen extends StatelessWidget {
                     ],
                   ),
                   Center(
-                    child: Container(
-                      margin: const EdgeInsets.only(top: 16),
-                      child: ElevatedButton(
-                          style: ElevatedButton.styleFrom(
-                            backgroundColor: const Color(0xFF353535),
-                            padding: const EdgeInsets.all(10),
-                          ),
-                          onPressed: () {},
-                          child: const Text(
-                            'Contato',
-                            style: TextStyle(color: Color(0xFFF2BC1B)),
-                          )),
+                    child: ElevatedButton(
+                      style: ElevatedButton.styleFrom(
+                        backgroundColor: CustomColorTheme.tertiaryColor,
+                      ),
+                      onPressed: () {},
+                      child: Text(
+                        'Contato',
+                        style: TextStyle(
+                          color: CustomColorTheme.primaryColor,
+                        ),
+                      ),
                     ),
                   ),
                 ],
@@ -216,7 +216,7 @@ Widget _buildColumnCard({
   required String subtitle,
 }) {
   return Card(
-    color: const Color(0xFFF9F9F9),
+    color: CustomColorTheme.onSurfaceColor,
     elevation: 8,
     shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(8)),
     margin: const EdgeInsets.all(8),
@@ -224,7 +224,11 @@ Widget _buildColumnCard({
       padding: const EdgeInsets.all(8.0),
       child: Column(
         children: [
-          Icon(icon, size: 30, color: const Color(0xFFF2BC1B)),
+          Icon(
+            icon,
+            size: 30,
+            color: CustomColorTheme.primaryColor,
+          ),
           const SizedBox(height: 4),
           Text(
             title,
@@ -232,7 +236,6 @@ Widget _buildColumnCard({
               fontWeight: FontWeight.bold,
             ),
           ),
-          Text(subtitle),
         ],
       ),
     ),
