@@ -81,7 +81,10 @@ class _NovoImovelFormsState extends State<NovoImovelForms> {
                 print('Campo 4: $value4');
                 print('Campo 5: $value5');
 
-                Navigator.pushNamed(context, '/forms2');
+                Navigator.pushNamed(
+                  context,
+                  '/forms2',
+                );
               },
               style: ElevatedButton.styleFrom(
                   padding:

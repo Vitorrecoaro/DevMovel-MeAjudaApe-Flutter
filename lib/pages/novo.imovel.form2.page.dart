@@ -1,3 +1,4 @@
+import 'package:dev_movel_me_ajuda_ape/dto/enums/form.labels.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 
@@ -166,7 +167,7 @@ class _NovoImovelForms2State extends State<NovoImovelForms2> {
                   const SizedBox(height: 40),
                   ElevatedButton(
                     onPressed: () {
-                      Navigator.pushNamed(context, '/');
+                      Navigator.pop(context);
                     },
                     style: ElevatedButton.styleFrom(
                         padding: const EdgeInsets.symmetric(
@@ -184,26 +185,4 @@ class _NovoImovelForms2State extends State<NovoImovelForms2> {
       ),
     );
   }
-}
-
-enum QuartosLabel {
-  um('1'),
-  dois('2'),
-  tres('3'),
-  quatro('4'),
-  cinco('5');
-
-  const QuartosLabel(this.label);
-  final String label;
-}
-
-enum BanheirosLabel {
-  um('1'),
-  dois('2'),
-  tres('3'),
-  quatro('4'),
-  cinco('5');
-
-  const BanheirosLabel(this.label);
-  final String label;
 }
