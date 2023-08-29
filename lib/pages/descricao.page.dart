@@ -236,6 +236,12 @@ Widget _buildColumnCard({
               fontWeight: FontWeight.bold,
             ),
           ),
+          Text(
+            subtitle,
+            style: const TextStyle(
+              fontWeight: FontWeight.bold,
+            ),
+          )
         ],
       ),
     ),
