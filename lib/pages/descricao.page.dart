@@ -16,7 +16,7 @@ class DescricaoScreen extends StatelessWidget {
     AppLocalizations localization = AppLocalizations.of(context)!;
     return Scaffold(
       appBar: AppBar(
-        title: Text(localization.description),
+        title: Text(localization.description_desc),
       ),
       body: SingleChildScrollView(
         child: Column(
@@ -33,14 +33,14 @@ class DescricaoScreen extends StatelessWidget {
                       Text(
                         imovel.name,
                         style: const TextStyle(
-                          fontSize: 18,
+                          fontSize: 17,
                           fontWeight: FontWeight.bold,
                         ),
                       ),
                       Text(
                         '${imovel.rent}',
                         style: const TextStyle(
-                          fontSize: 18,
+                          fontSize: 17,
                           fontWeight: FontWeight.bold,
                         ),
                       ),
@@ -49,7 +49,7 @@ class DescricaoScreen extends StatelessWidget {
                   Column(
                     children: [
                       Text(
-                        localization.condominium,
+                        localization.condominium_desc,
                         style: TextStyle(
                           fontSize: 15,
                           fontWeight: FontWeight.bold,
@@ -67,7 +67,7 @@ class DescricaoScreen extends StatelessWidget {
                   Column(
                     children: [
                       Text(
-                        localization.iptu,
+                        localization.iptu_desc,
                         style: TextStyle(
                           fontSize: 15,
                           fontWeight: FontWeight.bold,
@@ -92,21 +92,21 @@ class DescricaoScreen extends StatelessWidget {
                   child: _buildColumnCard(
                     icon: Icons.bed_outlined,
                     title: '${imovel.bedrooms}',
-                    subtitle: localization.bedrooms,
+                    subtitle: localization.bedrooms_desc,
                   ),
                 ),
                 Expanded(
                   child: _buildColumnCard(
                     icon: Icons.shower_outlined,
                     title: '${imovel.bathrooms}',
-                    subtitle: localization.bathrooms,
+                    subtitle: localization.bathrooms_desc,
                   ),
                 ),
                 Expanded(
                   child: _buildColumnCard(
                     icon: Icons.square_foot_outlined,
                     title: '${imovel.size}',
-                    subtitle: localization.area,
+                    subtitle: localization.area_desc,
                   ),
                 ),
               ],
@@ -129,7 +129,7 @@ class DescricaoScreen extends StatelessWidget {
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
                   Text(
-                    localization.description,
+                    localization.description_desc,
                     style: TextStyle(
                       fontSize: 15,
                       fontWeight: FontWeight.bold,
@@ -150,7 +150,7 @@ class DescricaoScreen extends StatelessWidget {
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
                   Text(
-                    localization.property_characteristics,
+                    localization.property_characteristics_desc,
                     style: TextStyle(
                       fontSize: 15,
                       fontWeight: FontWeight.bold,
@@ -160,23 +160,23 @@ class DescricaoScreen extends StatelessWidget {
                     spacing: 70,
                     children: [
                       if (imovel.characteristics.furnished ?? false)
-                        FeatureText(
+                        Text(
                           localization.furnished,
                         ),
                       if (imovel.characteristics.garden ?? false)
-                        FeatureText(
+                        Text(
                           localization.garden,
                         ),
                       if (imovel.characteristics.balcony ?? false)
-                        FeatureText(localization.balcony),
+                        Text(localization.balcony),
                       if (imovel.characteristics.serviceArea ?? false)
-                        FeatureText(localization.serviceArea),
+                        Text(localization.serviceArea),
                       if (imovel.characteristics.recreationArea ?? false)
-                        FeatureText(localization.recreationArea),
+                        Text(localization.recreationArea),
                       if (imovel.characteristics.gym ?? false)
-                        FeatureText(localization.gym),
+                        Text(localization.gym),
                       if (imovel.characteristics.parking ?? false)
-                        FeatureText(localization.parking),
+                        Text(localization.parking),
                     ],
                   )
                 ],
@@ -188,16 +188,17 @@ class DescricaoScreen extends StatelessWidget {
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
                   Text(
-                    localization.advertiser_contact,
+                    localization.advertiser_contact_desc,
                     style: TextStyle(
                       fontSize: 15,
                       fontWeight: FontWeight.bold,
                     ),
                   ),
-                  Row(
+                  Wrap(
+                    spacing: 30,
                     children: [
-                      FeatureText('Whatsapp: (12) 91234-5678'),
-                      FeatureText(localization.property_code + ': 12345'),
+                      Text('Whatsapp: (12) 91234-5678'),
+                      Text(localization.property_code_desc + ': 12345'),
                     ],
                   ),
                   Center(
@@ -210,7 +211,7 @@ class DescricaoScreen extends StatelessWidget {
                           ),
                           onPressed: () {},
                           child: Text(
-                            localization.contact,
+                            localization.contact_desc,
                             style: TextStyle(color: Color(0xFFF2BC1B)),
                           )),
                     ),
