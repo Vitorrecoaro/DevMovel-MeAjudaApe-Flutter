@@ -56,7 +56,7 @@ class _NovoImovelForms2State extends State<NovoImovelForms2> {
               value: _casaSelected,
               onChanged: (bool? value) {
                 setState(() {
-                  _casaSelected = value!;
+                  _casaSelected = value ?? false;
                 });
               },
               controlAffinity: ListTileControlAffinity.leading,
@@ -67,7 +67,7 @@ class _NovoImovelForms2State extends State<NovoImovelForms2> {
               value: _apSelected,
               onChanged: (bool? value) {
                 setState(() {
-                  _apSelected = value!;
+                  _apSelected = value ?? false;
                 });
               },
               controlAffinity: ListTileControlAffinity.leading,
@@ -78,7 +78,7 @@ class _NovoImovelForms2State extends State<NovoImovelForms2> {
               value: _repSelected,
               onChanged: (bool? value) {
                 setState(() {
-                  _repSelected = value!;
+                  _repSelected = value ?? false;
                 });
               },
               controlAffinity: ListTileControlAffinity.leading,

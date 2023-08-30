@@ -160,23 +160,23 @@ class DescricaoScreen extends StatelessWidget {
                     spacing: 70,
                     children: [
                       if (imovel.characteristics.furnished ?? false)
-                        FeatureText(
+                        Text(
                           localization.furnished,
                         ),
                       if (imovel.characteristics.garden ?? false)
-                        FeatureText(
+                        Text(
                           localization.garden,
                         ),
                       if (imovel.characteristics.balcony ?? false)
-                        FeatureText(localization.balcony),
+                        Text(localization.balcony),
                       if (imovel.characteristics.serviceArea ?? false)
-                        FeatureText(localization.serviceArea),
+                        Text(localization.serviceArea),
                       if (imovel.characteristics.recreationArea ?? false)
-                        FeatureText(localization.recreationArea),
+                        Text(localization.recreationArea),
                       if (imovel.characteristics.gym ?? false)
-                        FeatureText(localization.gym),
+                        Text(localization.gym),
                       if (imovel.characteristics.parking ?? false)
-                        FeatureText(localization.parking),
+                        Text(localization.parking),
                     ],
                   )
                 ],
@@ -196,8 +196,8 @@ class DescricaoScreen extends StatelessWidget {
                   ),
                   Row(
                     children: [
-                      FeatureText('Whatsapp: (12) 91234-5678'),
-                      FeatureText(localization.property_code + ': 12345'),
+                      Text('Whatsapp: (12) 91234-5678'),
+                      Text(localization.property_code + ': 12345'),
                     ],
                   ),
                   Center(
@@ -206,7 +206,6 @@ class DescricaoScreen extends StatelessWidget {
                       child: ElevatedButton(
                           style: ElevatedButton.styleFrom(
                             backgroundColor: const Color(0xFF353535),
-                            padding: const EdgeInsets.all(10),
                           ),
                           onPressed: () {},
                           child: Text(
