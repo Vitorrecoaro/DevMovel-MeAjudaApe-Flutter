@@ -1,4 +1,5 @@
 import 'package:dev_movel_me_ajuda_ape/classes/custom_color_theme.dart';
+import 'package:dev_movel_me_ajuda_ape/pages/chat.page.dart';
 import 'package:dev_movel_me_ajuda_ape/pages/descricao.page.dart';
 import 'package:dev_movel_me_ajuda_ape/pages/novo.imovel.form2.page.dart';
 import 'package:dev_movel_me_ajuda_ape/pages/principal.page.dart';
@@ -36,6 +37,7 @@ class MyApp extends StatelessWidget {
           '/description': (context) => DescricaoScreen(),
           '/forms': (context) => const NovoImovelForms(),
           '/forms2': (context) => const NovoImovelForms2(),
+          '/msg': (context) => const ChatPage(),
         },
         title: 'Me ajuda Apê',
         theme: ThemeData(

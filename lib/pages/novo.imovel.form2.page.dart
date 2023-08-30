@@ -1,6 +1,7 @@
 import 'package:dev_movel_me_ajuda_ape/dto/enums/form.labels.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
+import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 
 class NovoImovelForms2 extends StatefulWidget {
   const NovoImovelForms2({super.key});
@@ -27,6 +28,8 @@ class _NovoImovelForms2State extends State<NovoImovelForms2> {
 
   @override
   Widget build(BuildContext context) {
+    AppLocalizations _localization = AppLocalizations.of(context)!;
+
     final List<DropdownMenuEntry<QuartosLabel>> nQuartos =
         <DropdownMenuEntry<QuartosLabel>>[];
     for (final QuartosLabel quartos in QuartosLabel.values) {
@@ -43,13 +46,13 @@ class _NovoImovelForms2State extends State<NovoImovelForms2> {
 
     return Scaffold(
       appBar: AppBar(
-        title: const Text('Insira as informações do imóvel'),
+        title: Text(_localization.titleF2),
       ),
       body: SingleChildScrollView(
         child: Column(
           children: [
             CheckboxListTile(
-              title: const Text('Casa'),
+              title: Text(_localization.house),
               value: _casaSelected,
               onChanged: (bool? value) {
                 setState(() {
@@ -60,7 +63,7 @@ class _NovoImovelForms2State extends State<NovoImovelForms2> {
               tristate: true,
             ),
             CheckboxListTile(
-              title: const Text('Apartamento'),
+              title: Text(_localization.apartament),
               value: _apSelected,
               onChanged: (bool? value) {
                 setState(() {
@@ -71,7 +74,7 @@ class _NovoImovelForms2State extends State<NovoImovelForms2> {
               tristate: true,
             ),
             CheckboxListTile(
-              title: const Text('Quarto em República'),
+              title: Text(_localization.republic),
               value: _repSelected,
               onChanged: (bool? value) {
                 setState(() {
@@ -93,7 +96,7 @@ class _NovoImovelForms2State extends State<NovoImovelForms2> {
                         DropdownMenu<QuartosLabel>(
                           initialSelection: QuartosLabel.um,
                           controller: quartosController,
-                          label: const Text('Número de Quartos'),
+                          label: Text(_localization.numRooms),
                           dropdownMenuEntries: nQuartos,
                           onSelected: (QuartosLabel? quartos) {
                             setState(() {
@@ -106,7 +109,7 @@ class _NovoImovelForms2State extends State<NovoImovelForms2> {
                         DropdownMenu<BanheirosLabel>(
                           initialSelection: BanheirosLabel.um,
                           controller: banheirosController,
-                          label: const Text('Número de Banheiros'),
+                          label: Text(_localization.numBath),
                           dropdownMenuEntries: nBanheiros,
                           onSelected: (BanheirosLabel? banheiros) {
                             setState(() {
@@ -120,8 +123,8 @@ class _NovoImovelForms2State extends State<NovoImovelForms2> {
                   ),
                   TextField(
                     controller: _tfM2Controller,
-                    decoration: const InputDecoration(
-                      labelText: 'Tamanho Acomodação(m²)',
+                    decoration: InputDecoration(
+                      label: Text(_localization.size),
                       border: OutlineInputBorder(),
                     ),
                     keyboardType: TextInputType.number,
@@ -129,8 +132,8 @@ class _NovoImovelForms2State extends State<NovoImovelForms2> {
                   const SizedBox(height: 20),
                   TextField(
                     controller: _tfValController,
-                    decoration: const InputDecoration(
-                      labelText: 'Valor Aluguel',
+                    decoration: InputDecoration(
+                      label: Text(_localization.rent),
                       border: OutlineInputBorder(),
                     ),
                     keyboardType: TextInputType.number,
@@ -138,16 +141,16 @@ class _NovoImovelForms2State extends State<NovoImovelForms2> {
                   const SizedBox(height: 20),
                   TextField(
                       controller: _tfCondController,
-                      decoration: const InputDecoration(
-                        labelText: 'Valor Condomínio',
+                      decoration: InputDecoration(
+                        label: Text(_localization.condominium),
                         border: OutlineInputBorder(),
                       ),
                       keyboardType: TextInputType.number),
                   const SizedBox(height: 20),
                   TextField(
                     controller: _tfIptuController,
-                    decoration: const InputDecoration(
-                      labelText: 'Valor IPTU',
+                    decoration: InputDecoration(
+                      label: Text(_localization.iptu),
                       border: OutlineInputBorder(),
                     ),
                     keyboardType: TextInputType.number,
@@ -156,8 +159,8 @@ class _NovoImovelForms2State extends State<NovoImovelForms2> {
                   TextField(
                     controller: _tfDescController,
                     maxLines: 2,
-                    decoration: const InputDecoration(
-                      labelText: 'Descrição',
+                    decoration: InputDecoration(
+                      label: Text(_localization.desc),
                       border: OutlineInputBorder(),
                     ),
                     keyboardType: TextInputType.multiline,
@@ -172,8 +175,8 @@ class _NovoImovelForms2State extends State<NovoImovelForms2> {
                     style: ElevatedButton.styleFrom(
                         padding: const EdgeInsets.symmetric(
                             vertical: 10, horizontal: 40)),
-                    child: const Text(
-                      'CONTINUAR',
+                    child: Text(
+                      _localization.goon,
                       style: TextStyle(fontSize: 15),
                     ),
                   ),

@@ -1,4 +1,3 @@
-import 'package:dev_movel_me_ajuda_ape/pages/chat.page.dart';
 import 'package:dev_movel_me_ajuda_ape/pages/novo.imovel.form1.page.dart';
 import 'package:dev_movel_me_ajuda_ape/pages/imoveis.page.dart';
 import 'package:flutter/material.dart';
@@ -19,7 +18,7 @@ class MainPage extends StatelessWidget {
       body: [
         const ImoveisPage(),
         const NovoImovelForms(),
-        const ChatPage(),
+        const Placeholder(),
         Container(
           color: Colors.blue,
           child: const Center(
