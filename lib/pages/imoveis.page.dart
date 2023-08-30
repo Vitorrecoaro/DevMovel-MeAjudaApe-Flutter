@@ -1,6 +1,6 @@
 import 'package:dev_movel_me_ajuda_ape/classes/imovel_response.dart';
-import 'package:dev_movel_me_ajuda_ape/components/imovel_card.dart';
-import 'package:dev_movel_me_ajuda_ape/components/imovel_card_skeleton.dart';
+import 'package:dev_movel_me_ajuda_ape/components/imovel.card.dart';
+import 'package:dev_movel_me_ajuda_ape/components/imovel.card.skeleton.dart';
 import 'package:dev_movel_me_ajuda_ape/services/fav_imoveis.service.dart';
 import 'package:flutter/material.dart';
 import 'package:dev_movel_me_ajuda_ape/services/imoveis_api.service.dart';

@@ -22,5 +22,23 @@
     "recreationArea": "RecreationArea",
     "gym": "Gym",
     "parking": "Parking"
+    "titleF1": "Enter the property address",
+    "cep": "CEP",
+    "street": "Street",
+    "neighborhood": "Neighborhood",
+    "number": "Number",
+    "addComplement": "Adress Complement",
+    "goon": "Continue",
+    "titleF2": "Enter property information",
+    "house": "House",
+    "apartament": "Apartament",
+    "republic": "Room in Republic",
+    "numRooms": "Number of Bedrooms",
+    "numBath": "Number of Bathrooms",
+    "size": "Property Size(m²)",
+    "rent": "Rent Price",
+    "condominium": "Condominium Price",
+    "iptu": "IPTU Price",
+    "desc": "Description"
 }
 

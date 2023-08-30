@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 
 class NovoImovelForms extends StatefulWidget {
   const NovoImovelForms({super.key});
@@ -16,9 +17,11 @@ class _NovoImovelFormsState extends State<NovoImovelForms> {
 
   @override
   Widget build(BuildContext context) {
+    AppLocalizations _localization = AppLocalizations.of(context)!;
+
     return Scaffold(
       appBar: AppBar(
-        title: const Text('Insira o endereço do imóvel'),
+        title: Text(_localization.titleF1),
       ),
       body: SingleChildScrollView(
         child: Padding(
@@ -26,8 +29,8 @@ class _NovoImovelFormsState extends State<NovoImovelForms> {
           child: Column(children: [
             TextField(
               controller: _tfCEPController,
-              decoration: const InputDecoration(
-                labelText: 'CEP',
+              decoration: InputDecoration(
+                label: Text(_localization.cep),
                 border: OutlineInputBorder(),
               ),
               keyboardType: TextInputType.number,
@@ -35,32 +38,32 @@ class _NovoImovelFormsState extends State<NovoImovelForms> {
             const SizedBox(height: 20),
             TextField(
               controller: _tfLagController,
-              decoration: const InputDecoration(
-                labelText: 'Logradouro',
+              decoration: InputDecoration(
+                label: Text(_localization.street),
                 border: OutlineInputBorder(),
               ),
             ),
             const SizedBox(height: 20),
             TextField(
               controller: _tfBairController,
-              decoration: const InputDecoration(
-                labelText: 'Bairro',
+              decoration: InputDecoration(
+                label: Text(_localization.neighborhood),
                 border: OutlineInputBorder(),
               ),
             ),
             const SizedBox(height: 20),
             TextField(
                 controller: _tfNumController,
-                decoration: const InputDecoration(
-                  labelText: 'Número',
+                decoration: InputDecoration(
+                  label: Text(_localization.number),
                   border: OutlineInputBorder(),
                 ),
                 keyboardType: TextInputType.number),
             const SizedBox(height: 20),
             TextField(
               controller: _tfComController,
-              decoration: const InputDecoration(
-                labelText: 'Complemento',
+              decoration: InputDecoration(
+                label: Text(_localization.addComplement),
                 border: OutlineInputBorder(),
               ),
             ),
@@ -81,16 +84,16 @@ class _NovoImovelFormsState extends State<NovoImovelForms> {
                 print('Campo 4: $value4');
                 print('Campo 5: $value5');
 
-                Navigator.pushNamed(context, '/forms2');
+                Navigator.pushNamed(
+                  context,
+                  '/forms2',
+                );
               },
               style: ElevatedButton.styleFrom(
                   backgroundColor: const Color(0xFF353535),
                   padding:
                       const EdgeInsets.symmetric(vertical: 10, horizontal: 40)),
-              child: const Text(
-                'CONTINUAR',
-                style: TextStyle(fontSize: 15, color: Color(0xFFF2BC1B)),
-              ),
+              child: Text(_localization.goon, style: TextStyle(fontSize: 15, color: Color(0xFFF2BC1B))),
             ),
           ]),
         ),

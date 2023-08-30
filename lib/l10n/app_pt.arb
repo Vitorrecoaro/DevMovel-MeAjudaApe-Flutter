@@ -22,4 +22,22 @@
     "recreationArea": "Área de lazer",
     "gym": "Academia",
     "parking": "Parque"
+    "titleF1": "Insira o endereço do imóvel",
+    "cep": "CEP",
+    "street": "Logradouro",
+    "neighborhood": "Bairro",
+    "number": "Number",
+    "addComplement": "Complemento",
+    "goon": "Continuar",
+    "titleF2": "Insira as informações do imóvel",
+    "house": "Casa",
+    "apartament": "Apartamento",
+    "republic": "Quarto em República",
+    "numRooms": "Número de Quartos",
+    "numBath": "Número de Banheiros",
+    "size": "Tamanho Acomodação(m²)",
+    "rent": "Valor Aluguel",
+    "condominium": "Valor Condomínio",
+    "iptu": "Valor IPTU",
+    "desc": "Descrição"
 }
