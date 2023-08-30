@@ -1,8 +1,7 @@
 import 'package:dev_movel_me_ajuda_ape/classes/custom_color_theme.dart';
+import 'package:dev_movel_me_ajuda_ape/components/carrousel.dart';
 import 'package:flutter/material.dart';
 import 'package:dev_movel_me_ajuda_ape/classes/imovel.dart';
-
-import '../components/carrousel.dart';
 
 // ignore: must_be_immutable
 class DescricaoScreen extends StatelessWidget {
@@ -234,7 +233,9 @@ class DescricaoScreen extends StatelessWidget {
                       style: ElevatedButton.styleFrom(
                         backgroundColor: CustomColorTheme.tertiaryColor,
                       ),
-                      onPressed: () {},
+                      onPressed: () {
+                        Navigator.pushNamed(context, "/msg");
+                      },
                       child: Text(
                         'Contato',
                         style: TextStyle(

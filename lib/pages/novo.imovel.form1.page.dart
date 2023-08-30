@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
-import 'package:dev_movel_me_ajuda_ape/classes/custom_color_theme.dart';
 
 class NovoImovelForms extends StatefulWidget {
   const NovoImovelForms({super.key});
