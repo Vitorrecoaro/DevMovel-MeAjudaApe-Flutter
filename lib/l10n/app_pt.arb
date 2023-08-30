@@ -21,7 +21,7 @@
     "serviceArea": "Área de serviço",
     "recreationArea": "Área de lazer",
     "gym": "Academia",
-    "parking": "Parque"
+    "parking": "Parque",
     "titleF1": "Insira o endereço do imóvel",
     "cep": "CEP",
     "street": "Logradouro",
@@ -37,7 +37,5 @@
     "numBath": "Número de Banheiros",
     "size": "Tamanho Acomodação(m²)",
     "rent": "Valor Aluguel",
-    "condominium": "Valor Condomínio",
-    "iptu": "Valor IPTU",
     "desc": "Descrição"
 }

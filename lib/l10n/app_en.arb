@@ -21,7 +21,7 @@
     "serviceArea": "ServiceArea",
     "recreationArea": "RecreationArea",
     "gym": "Gym",
-    "parking": "Parking"
+    "parking": "Parking",
     "titleF1": "Enter the property address",
     "cep": "CEP",
     "street": "Street",
@@ -37,8 +37,5 @@
     "numBath": "Number of Bathrooms",
     "size": "Property Size(m²)",
     "rent": "Rent Price",
-    "condominium": "Condominium Price",
-    "iptu": "IPTU Price",
     "desc": "Description"
 }
-
