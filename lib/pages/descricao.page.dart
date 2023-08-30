@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:carousel_slider/carousel_slider.dart';
 import 'package:dev_movel_me_ajuda_ape/classes/imovel.dart';
+import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 
 // ignore: must_be_immutable
 class DescricaoScreen extends StatelessWidget {
@@ -10,9 +11,10 @@ class DescricaoScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     imovel = ModalRoute.of(context)?.settings.arguments as Imovel;
+    AppLocalizations localization = AppLocalizations.of(context)!;
     return Scaffold(
       appBar: AppBar(
-        title: const Text('Descrição'),
+        title: Text(localization.description),
       ),
       body: SingleChildScrollView(
         child: Column(
@@ -44,8 +46,8 @@ class DescricaoScreen extends StatelessWidget {
                   ),
                   Column(
                     children: [
-                      const Text(
-                        'Condomínio',
+                      Text(
+                        localization.condominium,
                         style: TextStyle(
                           fontSize: 15,
                           fontWeight: FontWeight.bold,
@@ -62,8 +64,8 @@ class DescricaoScreen extends StatelessWidget {
                   ),
                   Column(
                     children: [
-                      const Text(
-                        'IPTU',
+                      Text(
+                        localization.iptu,
                         style: TextStyle(
                           fontSize: 15,
                           fontWeight: FontWeight.bold,
@@ -88,21 +90,21 @@ class DescricaoScreen extends StatelessWidget {
                   child: _buildColumnCard(
                     icon: Icons.bed_outlined,
                     title: '${imovel.bedrooms}',
-                    subtitle: 'Quartos',
+                    subtitle: localization.bedrooms,
                   ),
                 ),
                 Expanded(
                   child: _buildColumnCard(
                     icon: Icons.shower_outlined,
                     title: '${imovel.bathrooms}',
-                    subtitle: 'Banheiros',
+                    subtitle: localization.bathrooms,
                   ),
                 ),
                 Expanded(
                   child: _buildColumnCard(
                     icon: Icons.square_foot_outlined,
                     title: '${imovel.size}',
-                    subtitle: 'Área',
+                    subtitle: localization.area,
                   ),
                 ),
               ],
@@ -124,8 +126,8 @@ class DescricaoScreen extends StatelessWidget {
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
-                  const Text(
-                    'Descrição',
+                  Text(
+                    localization.description,
                     style: TextStyle(
                       fontSize: 15,
                       fontWeight: FontWeight.bold,
@@ -140,30 +142,41 @@ class DescricaoScreen extends StatelessWidget {
                 ],
               ),
             ),
-            const Padding(
+            Padding(
               padding: EdgeInsets.all(8),
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
                   Text(
-                    'Características do imóvel',
+                    localization.property_characteristics,
                     style: TextStyle(
                       fontSize: 15,
                       fontWeight: FontWeight.bold,
                     ),
                   ),
-                  Row(
+                  Wrap(
+                    spacing: 70,
                     children: [
-                      FeatureText('Armário embutido'),
-                      FeatureText('Área de serviço'),
+                      if (imovel.characteristics.furnished ?? false)
+                        FeatureText(
+                          localization.furnished,
+                        ),
+                      if (imovel.characteristics.garden ?? false)
+                        FeatureText(
+                          localization.garden,
+                        ),
+                      if (imovel.characteristics.balcony ?? false)
+                        FeatureText(localization.balcony),
+                      if (imovel.characteristics.serviceArea ?? false)
+                        FeatureText(localization.serviceArea),
+                      if (imovel.characteristics.recreationArea ?? false)
+                        FeatureText(localization.recreationArea),
+                      if (imovel.characteristics.gym ?? false)
+                        FeatureText(localization.gym),
+                      if (imovel.characteristics.parking ?? false)
+                        FeatureText(localization.parking),
                     ],
-                  ),
-                  Row(
-                    children: [
-                      FeatureText('Armário de cozinha'),
-                      FeatureText('Varanda'),
-                    ],
-                  ),
+                  )
                 ],
               ),
             ),
@@ -172,17 +185,17 @@ class DescricaoScreen extends StatelessWidget {
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
-                  const Text(
-                    'Contato do anunciante',
+                  Text(
+                    localization.advertiser_contact,
                     style: TextStyle(
                       fontSize: 15,
                       fontWeight: FontWeight.bold,
                     ),
                   ),
-                  const Row(
+                  Row(
                     children: [
                       FeatureText('Whatsapp: (12) 91234-5678'),
-                      FeatureText('Código do imóvel: 12345'),
+                      FeatureText(localization.property_code + ': 12345'),
                     ],
                   ),
                   Center(
@@ -194,8 +207,8 @@ class DescricaoScreen extends StatelessWidget {
                             padding: const EdgeInsets.all(10),
                           ),
                           onPressed: () {},
-                          child: const Text(
-                            'Contato',
+                          child: Text(
+                            localization.contact,
                             style: TextStyle(color: Color(0xFFF2BC1B)),
                           )),
                     ),

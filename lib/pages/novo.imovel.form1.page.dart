@@ -84,11 +84,12 @@ class _NovoImovelFormsState extends State<NovoImovelForms> {
                 Navigator.pushNamed(context, '/forms2');
               },
               style: ElevatedButton.styleFrom(
+                  backgroundColor: const Color(0xFF353535),
                   padding:
                       const EdgeInsets.symmetric(vertical: 10, horizontal: 40)),
               child: const Text(
                 'CONTINUAR',
-                style: TextStyle(fontSize: 15),
+                style: TextStyle(fontSize: 15, color: Color(0xFFF2BC1B)),
               ),
             ),
           ]),
