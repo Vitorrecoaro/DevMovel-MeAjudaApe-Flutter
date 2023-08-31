@@ -22,6 +22,7 @@ class _NovoImovelFormsState extends State<NovoImovelForms> {
     return Scaffold(
       appBar: AppBar(
         title: Text(_localization.titleF1),
+        centerTitle: true,
       ),
       body: SingleChildScrollView(
         child: Padding(
@@ -93,7 +94,8 @@ class _NovoImovelFormsState extends State<NovoImovelForms> {
                   backgroundColor: const Color(0xFF353535),
                   padding:
                       const EdgeInsets.symmetric(vertical: 10, horizontal: 40)),
-              child: Text(_localization.goon, style: TextStyle(fontSize: 15, color: Color(0xFFF2BC1B))),
+              child: Text(_localization.goon,
+                  style: TextStyle(fontSize: 15, color: Color(0xFFF2BC1B))),
             ),
           ]),
         ),

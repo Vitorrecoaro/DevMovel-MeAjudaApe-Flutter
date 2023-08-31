@@ -29,7 +29,7 @@ class MyApp extends StatelessWidget {
         ],
         supportedLocales: const [
           Locale('en'),
-          Locale('pt_BR'),
+          Locale('pt'),
         ],
         initialRoute: '/',
         routes: {

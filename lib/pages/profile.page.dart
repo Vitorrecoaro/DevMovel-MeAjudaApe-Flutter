@@ -21,7 +21,8 @@ class ProfileFragment extends StatelessWidget {
               children: [
                 const CircleAvatar(
                   backgroundImage: NetworkImage(
-                      'https://cdn-icons-png.flaticon.com/512/147/147142.png'),
+                    'https://cdn-icons-png.flaticon.com/512/147/147142.png',
+                  ),
                   radius: 60,
                 ),
                 const Padding(

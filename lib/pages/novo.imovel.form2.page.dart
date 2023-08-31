@@ -47,6 +47,7 @@ class _NovoImovelForms2State extends State<NovoImovelForms2> {
     return Scaffold(
       appBar: AppBar(
         title: Text(_localization.titleF2),
+        centerTitle: true,
       ),
       body: SingleChildScrollView(
         child: Column(
@@ -56,7 +57,11 @@ class _NovoImovelForms2State extends State<NovoImovelForms2> {
               value: _casaSelected,
               onChanged: (bool? value) {
                 setState(() {
-                  _casaSelected = value!;
+                  if (value != null) {
+                    _casaSelected = true;
+                  } else {
+                    _casaSelected = false;
+                  }
                 });
               },
               controlAffinity: ListTileControlAffinity.leading,
@@ -67,7 +72,11 @@ class _NovoImovelForms2State extends State<NovoImovelForms2> {
               value: _apSelected,
               onChanged: (bool? value) {
                 setState(() {
-                  _apSelected = value!;
+                  if (value != null) {
+                    _apSelected = true;
+                  } else {
+                    _apSelected = false;
+                  }
                 });
               },
               controlAffinity: ListTileControlAffinity.leading,
@@ -78,7 +87,11 @@ class _NovoImovelForms2State extends State<NovoImovelForms2> {
               value: _repSelected,
               onChanged: (bool? value) {
                 setState(() {
-                  _repSelected = value!;
+                  if (value != null) {
+                    _repSelected = true;
+                  } else {
+                    _repSelected = false;
+                  }
                 });
               },
               controlAffinity: ListTileControlAffinity.leading,
