@@ -37,5 +37,11 @@
     "numBath": "Número de Banheiros",
     "size": "Tamanho Acomodação(m²)",
     "rent": "Valor Aluguel",
+    "account": "Conta",
+    "myAds": "Meus Anúncios",
+    "safety": "Segurança",
+    "help": "Ajuda",
+    "settings": "Configurações",
+    "exit": "Sair",
     "desc": "Descrição"
 }

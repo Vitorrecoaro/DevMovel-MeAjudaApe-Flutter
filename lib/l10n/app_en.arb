@@ -37,5 +37,11 @@
     "numBath": "Number of Bathrooms",
     "size": "Property Size(m²)",
     "rent": "Rent Price",
+    "account": "My Account",
+    "myAds": "My Ads",
+    "safety": "Safety",
+    "help": "Help",
+    "settings": "Settings",
+    "exit": "Exit",
     "desc": "Description"
 }
