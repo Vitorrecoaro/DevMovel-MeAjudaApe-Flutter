@@ -6,12 +6,10 @@ class FeaturedText extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Expanded(
-      child: Text(
-        text,
-        style: const TextStyle(
-          fontSize: 13,
-        ),
+    return Text(
+      text,
+      style: const TextStyle(
+        fontSize: 13,
       ),
     );
   }

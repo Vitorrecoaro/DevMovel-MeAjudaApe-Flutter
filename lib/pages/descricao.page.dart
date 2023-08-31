@@ -157,6 +157,7 @@ class DescricaoScreen extends StatelessWidget {
                     ),
                   ),
                   Wrap(
+                    alignment: WrapAlignment.spaceBetween,
                     spacing: 70,
                     children: [
                       if (imovel.characteristics.furnished ?? false)
@@ -258,7 +259,6 @@ Widget _buildColumnCard({
             size: 30,
             color: CustomColorTheme.primaryColor,
           ),
-          const SizedBox(height: 4),
           Text(
             title,
             style: const TextStyle(
