@@ -21,7 +21,7 @@
     "serviceArea": "Área de serviço",
     "recreationArea": "Área de lazer",
     "gym": "Academia",
-    "parking": "Parque"
+    "parking": "Parque",
     "titleF1": "Insira o endereço do imóvel",
     "cep": "CEP",
     "street": "Logradouro",
@@ -39,5 +39,11 @@
     "rent": "Valor Aluguel",
     "condominium": "Valor Condomínio",
     "iptu": "Valor IPTU",
-    "desc": "Descrição"
+    "desc": "Descrição",
+    "account": "Conta",
+    "myAds": "Meus Anúncios",
+    "safety": "Segurança",
+    "help": "Ajuda",
+    "settings": "Configurações",
+    "exit": "Sair"
 }

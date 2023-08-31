@@ -21,7 +21,7 @@
     "serviceArea": "ServiceArea",
     "recreationArea": "RecreationArea",
     "gym": "Gym",
-    "parking": "Parking"
+    "parking": "Parking",
     "titleF1": "Enter the property address",
     "cep": "CEP",
     "street": "Street",
@@ -39,6 +39,12 @@
     "rent": "Rent Price",
     "condominium": "Condominium Price",
     "iptu": "IPTU Price",
-    "desc": "Description"
+    "desc": "Description",
+    "account": "My Account",
+    "myAds": "My Ads",
+    "safety": "Safety",
+    "help": "Help",
+    "settings": "Settings",
+    "exit": "Exit"
 }
 

@@ -1,13 +1,15 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 
 class ProfileFragment extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
+    AppLocalizations _localization = AppLocalizations.of(context)!;
     return Scaffold(
       appBar: AppBar(
           centerTitle: true,
           backgroundColor: Color(0xFF353535),
-          title:const Text('Perfil',
+          title: Text(_localization.profile,
             style: TextStyle(color: Color(0xFFF9F9F9),
               fontWeight: FontWeight.bold,
             ),
@@ -44,7 +46,7 @@ class ProfileFragment extends StatelessWidget {
                   ),
                   alignment: Alignment.centerLeft,
                 ),
-                label: Text('Conta',
+                label: Text(_localization.account,
                   style: TextStyle(
                     fontSize: 24.0,
                     fontWeight: FontWeight.bold,
@@ -69,7 +71,7 @@ class ProfileFragment extends StatelessWidget {
                   ),
                   alignment: Alignment.centerLeft,
                 ),
-                label: Text('Meus Anúncios',
+                label: Text(_localization.myAds,
                   style: TextStyle(
                     fontSize: 24.0,
                     fontWeight: FontWeight.bold,
@@ -94,7 +96,7 @@ class ProfileFragment extends StatelessWidget {
                   ),
                   alignment: Alignment.centerLeft,
                 ),
-                label: Text('Segurança',
+                label: Text(_localization.safety,
                   style: TextStyle(
                     fontSize: 24.0,
                     fontWeight: FontWeight.bold,
@@ -119,7 +121,7 @@ class ProfileFragment extends StatelessWidget {
                   ),
                   alignment: Alignment.centerLeft,
                 ),
-                label: Text('Ajuda',
+                label: Text(_localization.help,
                   style: TextStyle(
                     fontSize: 24.0,
                     fontWeight: FontWeight.bold,
@@ -144,7 +146,7 @@ class ProfileFragment extends StatelessWidget {
                   ),
                   alignment: Alignment.centerLeft,
                 ),
-                label: Text('Configurações',
+                label: Text(_localization.settings,
                   style: TextStyle(
                     fontSize: 24.0,
                     fontWeight: FontWeight.bold,
@@ -169,7 +171,7 @@ class ProfileFragment extends StatelessWidget {
                   ),
                   alignment: Alignment.centerLeft,
                 ),
-                label: Text('Sair',
+                label: Text(_localization.exit,
                   style: TextStyle(
                     fontSize: 24.0,
                     fontWeight: FontWeight.bold,
