@@ -99,7 +99,7 @@ class _ImovelCardSkeletonState extends State<ImovelCardSkeleton>
                       padding: const EdgeInsets.all(12.0),
                       decoration: BoxDecoration(
                         shape: BoxShape.circle,
-                        color: CustomColorTheme.onSurfaceColor,
+                        color: CustomColorTheme.surfaceColor,
                       ),
                       child: Icon(
                         Icons.favorite_border,

@@ -178,7 +178,10 @@ class _NovoImovelForms2State extends State<NovoImovelForms2> {
                             vertical: 10, horizontal: 40)),
                     child: Text(
                       _localization.goon,
-                      style: TextStyle(fontSize: 15, color: Color(0xFFF2BC1B)),
+                      style: const TextStyle(
+                        fontSize: 15,
+                        color: Color(0xFFF2BC1B),
+                      ),
                     ),
                   ),
                 ],

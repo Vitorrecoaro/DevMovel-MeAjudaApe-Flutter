@@ -14,6 +14,7 @@ class DescricaoScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     imovel = ModalRoute.of(context)?.settings.arguments as Imovel;
     AppLocalizations localization = AppLocalizations.of(context)!;
+
     return Scaffold(
       appBar: AppBar(
         title: Text(localization.description),
@@ -222,7 +223,11 @@ class DescricaoScreen extends StatelessWidget {
                             padding: const EdgeInsets.all(10),
                           ),
                           onPressed: () {
-                            Navigator.pushNamed(context, "/msg");
+                            Navigator.pushNamed(
+                              context,
+                              "/msg",
+                              arguments: "William",
+                            );
                           },
                           child: Text(
                             localization.contact,
@@ -246,7 +251,7 @@ Widget _buildColumnCard({
   required String subtitle,
 }) {
   return Card(
-    color: CustomColorTheme.onSurfaceColor,
+    color: CustomColorTheme.surfaceColor,
     elevation: 8,
     shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(8)),
     margin: const EdgeInsets.all(8),

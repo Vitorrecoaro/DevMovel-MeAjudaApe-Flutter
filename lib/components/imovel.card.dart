@@ -23,7 +23,11 @@ class ImovelCard extends StatelessWidget {
         child: InkWell(
           splashColor: CustomColorTheme.primaryColor.withAlpha(30),
           onTap: () {
-            Navigator.pushNamed(context, '/description', arguments: imovel);
+            Navigator.pushNamed(
+              context,
+              '/description',
+              arguments: imovel,
+            );
           },
           child: Column(
             mainAxisSize: MainAxisSize.min,
@@ -45,7 +49,7 @@ class ImovelCard extends StatelessWidget {
                     child: Container(
                       decoration: BoxDecoration(
                         shape: BoxShape.circle,
-                        color: CustomColorTheme.onSurfaceColor,
+                        color: CustomColorTheme.surfaceColor,
                       ),
                       child: IconButton(
                         onPressed: () => callbackFavButton(imovel.id),

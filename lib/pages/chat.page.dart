@@ -1,6 +1,5 @@
 import 'package:dev_movel_me_ajuda_ape/classes/custom_color_theme.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 
 class ChatPage extends StatefulWidget {
   const ChatPage({super.key});
@@ -12,11 +11,11 @@ class ChatPage extends StatefulWidget {
 class _ChatPageState extends State<ChatPage> {
   @override
   Widget build(BuildContext context) {
-    AppLocalizations _localization = AppLocalizations.of(context)!;
+    String contato = ModalRoute.of(context)!.settings.arguments as String;
 
     return Scaffold(
       appBar: AppBar(
-        title: Text(_localization.owner),
+        title: Text(contato),
         centerTitle: true,
         actions: [
           IconButton(
@@ -32,7 +31,7 @@ class _ChatPageState extends State<ChatPage> {
         children: [
           Expanded(
             child: Container(
-              color: CustomColorTheme.onSurfaceColor,
+              color: CustomColorTheme.surfaceColor,
             ),
           ),
           Container(

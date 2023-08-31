@@ -44,6 +44,19 @@ class MyApp extends StatelessWidget {
           appBarTheme: const AppBarTheme(
             backgroundColor: Colors.white,
           ),
+          colorScheme: ColorScheme(
+            primary: CustomColorTheme.primaryColor,
+            onPrimary: CustomColorTheme.tertiaryColor,
+            secondary: CustomColorTheme.secondaryColor,
+            onSecondary: const Color(0xFF050505),
+            surface: CustomColorTheme.surfaceColor,
+            onSurface: const Color(0xFF050505),
+            error: const Color(0xFFDC3545),
+            onError: Colors.white,
+            background: Colors.white,
+            onBackground: Colors.black,
+            brightness: Brightness.light,
+          ),
           inputDecorationTheme: const InputDecorationTheme(),
           navigationBarTheme: NavigationBarThemeData(
             backgroundColor: CustomColorTheme.tertiaryColor,

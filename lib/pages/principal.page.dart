@@ -1,5 +1,7 @@
+import 'package:dev_movel_me_ajuda_ape/pages/mensagens.page.dart';
 import 'package:dev_movel_me_ajuda_ape/pages/novo.imovel.form1.page.dart';
 import 'package:dev_movel_me_ajuda_ape/pages/imoveis.page.dart';
+import 'package:dev_movel_me_ajuda_ape/pages/profile.page.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
@@ -18,13 +20,8 @@ class MainPage extends StatelessWidget {
       body: [
         const ImoveisPage(),
         const NovoImovelForms(),
-        const Placeholder(),
-        Container(
-          color: Colors.blue,
-          child: const Center(
-            child: Text("Profile page"),
-          ),
-        ),
+        MensagensPage(),
+        const ProfileFragment()
       ][mainState.idxNavBar],
       bottomNavigationBar: NavigationBar(
         onDestinationSelected: (idx) => mainState.setIdx(idx),
