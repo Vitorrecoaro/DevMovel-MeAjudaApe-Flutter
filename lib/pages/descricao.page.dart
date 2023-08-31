@@ -1,5 +1,5 @@
+import 'package:dev_movel_me_ajuda_ape/components/featured.text.dart';
 import 'package:flutter/material.dart';
-import 'package:carousel_slider/carousel_slider.dart';
 import 'package:dev_movel_me_ajuda_ape/classes/imovel.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 import 'package:dev_movel_me_ajuda_ape/classes/custom_color_theme.dart';
@@ -50,7 +50,7 @@ class DescricaoScreen extends StatelessWidget {
                     children: [
                       Text(
                         localization.condominium,
-                        style: TextStyle(
+                        style: const TextStyle(
                           fontSize: 15,
                           fontWeight: FontWeight.bold,
                         ),
@@ -68,7 +68,7 @@ class DescricaoScreen extends StatelessWidget {
                     children: [
                       Text(
                         localization.iptu,
-                        style: TextStyle(
+                        style: const TextStyle(
                           fontSize: 15,
                           fontWeight: FontWeight.bold,
                         ),
@@ -130,7 +130,7 @@ class DescricaoScreen extends StatelessWidget {
                 children: [
                   Text(
                     localization.description,
-                    style: TextStyle(
+                    style: const TextStyle(
                       fontSize: 15,
                       fontWeight: FontWeight.bold,
                     ),
@@ -145,38 +145,49 @@ class DescricaoScreen extends StatelessWidget {
               ),
             ),
             Padding(
-              padding: EdgeInsets.all(8),
+              padding: const EdgeInsets.all(8),
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
                   Text(
                     localization.property_characteristics,
-                    style: TextStyle(
+                    style: const TextStyle(
                       fontSize: 15,
                       fontWeight: FontWeight.bold,
                     ),
                   ),
                   Wrap(
+                    alignment: WrapAlignment.spaceBetween,
                     spacing: 70,
                     children: [
                       if (imovel.characteristics.furnished ?? false)
-                        FeatureText(
-                          localization.furnished,
+                        FeaturedText(
+                          text: localization.furnished,
                         ),
                       if (imovel.characteristics.garden ?? false)
-                        FeatureText(
-                          localization.garden,
+                        FeaturedText(
+                          text: localization.garden,
                         ),
                       if (imovel.characteristics.balcony ?? false)
-                        FeatureText(localization.balcony),
+                        FeaturedText(
+                          text: localization.balcony,
+                        ),
                       if (imovel.characteristics.serviceArea ?? false)
-                        FeatureText(localization.serviceArea),
+                        FeaturedText(
+                          text: localization.serviceArea,
+                        ),
                       if (imovel.characteristics.recreationArea ?? false)
-                        FeatureText(localization.recreationArea),
+                        FeaturedText(
+                          text: localization.recreationArea,
+                        ),
                       if (imovel.characteristics.gym ?? false)
-                        FeatureText(localization.gym),
+                        FeaturedText(
+                          text: localization.gym,
+                        ),
                       if (imovel.characteristics.parking ?? false)
-                        FeatureText(localization.parking),
+                        FeaturedText(
+                          text: localization.parking,
+                        ),
                     ],
                   )
                 ],
@@ -189,15 +200,17 @@ class DescricaoScreen extends StatelessWidget {
                 children: [
                   Text(
                     localization.advertiser_contact,
-                    style: TextStyle(
+                    style: const TextStyle(
                       fontSize: 15,
                       fontWeight: FontWeight.bold,
                     ),
                   ),
                   Row(
                     children: [
-                      FeatureText('Whatsapp: (12) 91234-5678'),
-                      FeatureText(localization.property_code + ': 12345'),
+                      const FeaturedText(text: 'Whatsapp: (12) 91234-5678'),
+                      FeaturedText(
+                        text: '${localization.property_code}: 12345',
+                      ),
                     ],
                   ),
                   Center(
@@ -208,10 +221,12 @@ class DescricaoScreen extends StatelessWidget {
                             backgroundColor: const Color(0xFF353535),
                             padding: const EdgeInsets.all(10),
                           ),
-                          onPressed: () {},
+                          onPressed: () {
+                            Navigator.pushNamed(context, "/msg");
+                          },
                           child: Text(
                             localization.contact,
-                            style: TextStyle(color: Color(0xFFF2BC1B)),
+                            style: const TextStyle(color: Color(0xFFF2BC1B)),
                           )),
                     ),
                   ),
@@ -244,7 +259,6 @@ Widget _buildColumnCard({
             size: 30,
             color: CustomColorTheme.primaryColor,
           ),
-          const SizedBox(height: 4),
           Text(
             title,
             style: const TextStyle(

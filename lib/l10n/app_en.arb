@@ -18,8 +18,8 @@
     "furnished": "Furnished",
     "garden": "Garden",
     "balcony": "Balcony",
-    "serviceArea": "ServiceArea",
-    "recreationArea": "RecreationArea",
+    "serviceArea": "Service Area",
+    "recreationArea": "Recreation Area",
     "gym": "Gym",
     "parking": "Parking",
     "titleF1": "Enter the property address",
@@ -37,14 +37,11 @@
     "numBath": "Number of Bathrooms",
     "size": "Property Size(m²)",
     "rent": "Rent Price",
-    "condominium": "Condominium Price",
-    "iptu": "IPTU Price",
-    "desc": "Description",
     "account": "My Account",
     "myAds": "My Ads",
     "safety": "Safety",
     "help": "Help",
     "settings": "Settings",
-    "exit": "Exit"
+    "exit": "Exit",
+    "desc": "Description"
 }
-

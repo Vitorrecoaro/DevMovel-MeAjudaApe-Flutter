@@ -37,13 +37,11 @@
     "numBath": "Número de Banheiros",
     "size": "Tamanho Acomodação(m²)",
     "rent": "Valor Aluguel",
-    "condominium": "Valor Condomínio",
-    "iptu": "Valor IPTU",
-    "desc": "Descrição",
     "account": "Conta",
     "myAds": "Meus Anúncios",
     "safety": "Segurança",
     "help": "Ajuda",
     "settings": "Configurações",
-    "exit": "Sair"
+    "exit": "Sair",
+    "desc": "Descrição"
 }
